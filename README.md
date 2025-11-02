@@ -170,7 +170,7 @@ This project is open source and available under the MIT License.
 For inquiries about this website:
 - **Email**: tandalwadigp@example.com
 - **Phone**: +91 XXXXXXXXXX
-- **Address**: Tandulwadi, Tal. Shrirampur, Dist. Ahmednagar, Maharashtra
+- **Address**: Tanda, Tal. Gondia, Dist. Gondia, Maharashtra
 
 ### Credits
 

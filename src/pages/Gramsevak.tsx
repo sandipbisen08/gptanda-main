@@ -11,13 +11,13 @@ const Gramsevak: React.FC = () => {
     jobTitle: 'Village Administrative Officer',
     affiliation: {
       '@type': 'Organization',
-      name: 'Tandulwadi Grampanchayat',
+      name: 'Tanda Grampanchayat',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Tandulwadi',
-        addressLocality: 'Shrirampur',
-        addressRegion: 'Ahmednagar',
-        postalCode: '413709',
+        streetAddress: 'Tanda',
+        addressLocality: 'Gondia',
+        addressRegion: 'Gondia',
+        postalCode: '441601',
         addressCountry: 'IN'
       }
     }
@@ -53,13 +53,13 @@ const Gramsevak: React.FC = () => {
             <div className="profile-info">
               <h2>ग्रामसेवक</h2>
               <p className="designation">Village Administrative Officer</p>
-              
+
               <div className="info-section">
                 <h3>संक्षिप्त परिचय</h3>
                 <p>
-                  तांडा ग्रामपंचायतचे ग्रामसेवक हे गावचे मुख्य प्रशासकीय अधिकारी आहेत. 
-                  ते ग्रामपंचायतचे सर्व प्रशासकीय कार्य संभाळतात, दस्तऐवजीकरण करतात आणि 
-                  सरकारी योजनांचा अंमलबजावणी करतात. ते ग्रामस्थांच्या विविध प्रमाणपत्र, 
+                  तांडा ग्रामपंचायतचे ग्रामसेवक हे गावचे मुख्य प्रशासकीय अधिकारी आहेत.
+                  ते ग्रामपंचायतचे सर्व प्रशासकीय कार्य संभाळतात, दस्तऐवजीकरण करतात आणि
+                  सरकारी योजनांचा अंमलबजावणी करतात. ते ग्रामस्थांच्या विविध प्रमाणपत्र,
                   अर्ज आणि इतर कागदपत्रांचे कार्य पाहतात.
                 </p>
               </div>

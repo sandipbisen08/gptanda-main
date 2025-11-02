@@ -7,15 +7,15 @@ const Contact: React.FC = () => {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: 'Tandulwadi Grampanchayat',
+    name: 'Tanda Grampanchayat',
     description: 'तांडा ग्रामपंचायत - संपर्क माहिती',
     url: 'https://tandgrampanchayat.gov.in/contact',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Tandulwadi',
-      addressLocality: 'Shrirampur',
-      addressRegion: 'Ahmednagar',
-      postalCode: '413709',
+      streetAddress: 'Tanda',
+      addressLocality: 'Gondia',
+      addressRegion: 'Gondia',
+      postalCode: '441601',
       addressCountry: 'IN'
     },
     contactPoint: {
@@ -84,7 +84,7 @@ const Contact: React.FC = () => {
             {/* Contact Information */}
             <div className="contact-info">
               <h2>संपर्क माहिती</h2>
-              
+
               <div className="info-card">
                 <div className="info-icon">
                   <FaMapMarkerAlt />

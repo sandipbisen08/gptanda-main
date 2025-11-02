@@ -11,13 +11,13 @@ const Adhyaksha: React.FC = () => {
     jobTitle: 'Chairman',
     affiliation: {
       '@type': 'Organization',
-      name: 'Tandulwadi Grampanchayat',
+      name: 'Tanda Grampanchayat',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Tandulwadi',
-        addressLocality: 'Shrirampur',
-        addressRegion: 'Ahmednagar',
-        postalCode: '413709',
+        streetAddress: 'Tanda',
+        addressLocality: 'Gondia',
+        addressRegion: 'Gondia',
+        postalCode: '441601',
         addressCountry: 'IN'
       }
     }
@@ -53,13 +53,13 @@ const Adhyaksha: React.FC = () => {
             <div className="profile-info">
               <h2>अध्यक्ष</h2>
               <p className="designation">Chairman of Grampanchayat Committee</p>
-              
+
               <div className="info-section">
                 <h3>संक्षिप्त परिचय</h3>
                 <p>
-                  तांडा ग्रामपंचायतचे अध्यक्ष हे ग्रामपंचायत समितीचे प्रमुख आहेत. 
-                  ते समितीच्या सर्व बैठकांचे नेतृत्व करतात, निर्णय घेतात आणि 
-                  ग्रामपंचायतचे विविध समितींचे कार्य पर्यवेक्षण करतात. ते ग्रामीण विकास, 
+                  तांडा ग्रामपंचायतचे अध्यक्ष हे ग्रामपंचायत समितीचे प्रमुख आहेत.
+                  ते समितीच्या सर्व बैठकांचे नेतृत्व करतात, निर्णय घेतात आणि
+                  ग्रामपंचायतचे विविध समितींचे कार्य पर्यवेक्षण करतात. ते ग्रामीण विकास,
                   शिक्षा, आरोग्य आणि कल्याणकारी कार्यक्रमांचे समन्वय करतात.
                 </p>
               </div>

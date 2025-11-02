@@ -18,9 +18,9 @@
 
 ## Project Overview
 
-**Project Name:** तांडा ग्रामपंचायत (Tandulwadi Grampanchayat)
+**Project Name:** तांडा ग्रामपंचायत (Tanda Grampanchayat)
 
-**Description:** An official website for Tandulwadi Grampanchayat (Village Council) in Shrirampur, Ahmednagar, Maharashtra, India.
+**Description:** An official website for Tanda Grampanchayat (Village Council) in Gondia, Gondia, Maharashtra, India.
 
 **Purpose:** 
 - Provide information about the grampanchayat
@@ -509,7 +509,7 @@ For issues or questions:
 
 ## License
 
-This project is created for तांडा ग्रामपंचायत (Tandulwadi Grampanchayat).
+This project is created for तांडा ग्रामपंचायत (Tanda Grampanchayat).
 
 ---
 
@@ -548,7 +548,7 @@ This project is created for तांडा ग्रामपंचायत (T
 ## Contact Information
 
 **Project:** तांडा ग्रामपंचायत
-**Location:** Tandulwadi, Shrirampur, Ahmednagar, Maharashtra 413709
+**Location:** Tanda, Gondia, Gondia, Maharashtra 441601
 **Website:** https://tandgrampanchayat.gov.in (To be updated)
 
 ---

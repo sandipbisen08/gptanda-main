@@ -11,13 +11,13 @@ const Upsarpanch: React.FC = () => {
     jobTitle: 'Vice Sarpanch (Deputy Village Head)',
     affiliation: {
       '@type': 'Organization',
-      name: 'Tandulwadi Grampanchayat',
+      name: 'Tanda Grampanchayat',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Tandulwadi',
-        addressLocality: 'Shrirampur',
-        addressRegion: 'Ahmednagar',
-        postalCode: '413709',
+        streetAddress: 'Tanda',
+        addressLocality: 'Gondia',
+        addressRegion: 'Gondia',
+        postalCode: '441601',
         addressCountry: 'IN'
       }
     }
@@ -53,13 +53,13 @@ const Upsarpanch: React.FC = () => {
             <div className="profile-info">
               <h2>उपसरपंच</h2>
               <p className="designation">Vice Sarpanch (Deputy Village Head)</p>
-              
+
               <div className="info-section">
                 <h3>संक्षिप्त परिचय</h3>
                 <p>
-                  तांडा ग्रामपंचायतचे उपसरपंच हे सरपंचचे मुख्य सहायक आहेत. 
-                  ते सरपंचच्या अनुपस्थितीत त्यांचे कार्य संभाळतात आणि विविध विभागांचे 
-                  पर्यवेक्षण करतात. महिला कल्याण, स्वच्छता आणि सामाजिक कार्यक्रमांचे विशेष 
+                  तांडा ग्रामपंचायतचे उपसरपंच हे सरपंचचे मुख्य सहायक आहेत.
+                  ते सरपंचच्या अनुपस्थितीत त्यांचे कार्य संभाळतात आणि विविध विभागांचे
+                  पर्यवेक्षण करतात. महिला कल्याण, स्वच्छता आणि सामाजिक कार्यक्रमांचे विशेष
                   जिम्मेदारी असते.
                 </p>
               </div>

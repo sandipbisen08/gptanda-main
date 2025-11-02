@@ -10,7 +10,7 @@ OVERVIEW
 ================================================================================
 
 This document summarizes all changes made to improve SEO and add grampanchayat 
-official website sections to the Tandulwadi Grampanchayat website.
+official website sections to the Tanda Grampanchayat website.
 
 ================================================================================
 NEW FILES CREATED (9)

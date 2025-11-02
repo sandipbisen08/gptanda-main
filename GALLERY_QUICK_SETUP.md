@@ -57,7 +57,7 @@ Edit in `src/pages/Home.tsx`:
 
 ```tsx
 <div className="gallery-item">
-  <img src="/images/gallery-1.jpg" alt="Your Title" />
+  <img src="/images/gp1.jpg" alt="Your Title" />
   <div className="gallery-overlay">
     <h3>Your Custom Title</h3>
   </div>

@@ -11,13 +11,13 @@ const Sarpanch: React.FC = () => {
     jobTitle: 'Sarpanch (Village Head)',
     affiliation: {
       '@type': 'Organization',
-      name: 'Tandulwadi Grampanchayat',
+      name: 'Tanda Grampanchayat',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Tandulwadi',
-        addressLocality: 'Shrirampur',
-        addressRegion: 'Ahmednagar',
-        postalCode: '413709',
+        streetAddress: 'Tanda',
+        addressLocality: 'Gondia',
+        addressRegion: 'Gondia',
+        postalCode: '441601',
         addressCountry: 'IN'
       }
     }
@@ -53,12 +53,12 @@ const Sarpanch: React.FC = () => {
             <div className="profile-info">
               <h2>ग्रामपंचायत सरपंच</h2>
               <p className="designation">Sarpanch (Village Head)</p>
-              
+
               <div className="info-section">
                 <h3>संक्षिप्त परिचय</h3>
                 <p>
-                  तांडा ग्रामपंचायतचे सरपंच हे गावचे प्रमुख नेता आहेत. 
-                  ते ग्रामपंचायतचे सर्व कार्यक्रमांचे नेतृत्व करतात आणि गावच्या विकासासाठी 
+                  तांडा ग्रामपंचायतचे सरपंच हे गावचे प्रमुख नेता आहेत.
+                  ते ग्रामपंचायतचे सर्व कार्यक्रमांचे नेतृत्व करतात आणि गावच्या विकासासाठी
                   जिल्हा प्रशासन व राज्य सरकारशी संपर्क साधतात.
                 </p>
               </div>

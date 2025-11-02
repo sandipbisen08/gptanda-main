@@ -3,23 +3,24 @@ import { Link } from 'react-router-dom';
 import { FaTools, FaEnvelope, FaBullhorn, FaUsers } from 'react-icons/fa';
 import SEO from '../components/SEO';
 import './Home.scss';
+import gp1 from '../images/gp1.jpg';
 
 const Home: React.FC = () => {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: 'Tandulwadi Grampanchayat',
+    name: 'Tanda Grampanchayat',
     description: 'तांडा ग्रामपंचायत - गोंदिया जिल्ह्यातील गोंदिया तालुक्यातील आधिकारिक ग्रामपंचायत',
     url: 'https://tandgrampanchayat.gov.in',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Tandulwadi',
-      addressLocality: 'Shrirampur',
-      addressRegion: 'Ahmednagar',
-      postalCode: '413709',
+      streetAddress: 'Tanda',
+      addressLocality: 'Gondia',
+      addressRegion: 'Gondia',
+      postalCode: '441601',
       addressCountry: 'IN'
     },
-    areaServed: 'Tandulwadi, Shrirampur, Ahmednagar',
+    areaServed: 'Tanda, Gondia, Gondia',
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'Customer Service',
@@ -60,14 +61,14 @@ const Home: React.FC = () => {
           <div className="about-content">
             <div className="about-text">
               <p>
-                तांडा हे गोंदिया जिल्ह्यातील गोंदिया तालुक्यातील एक सुंदर गाव आहे. 
-                आमच्या ग्रामपंचायतचे उद्दिष्ट ग्रामीण भागातील लोकांच्या जीवनमानात सुधारणा करणे 
+                तांडा हे गोंदिया जिल्ह्यातील गोंदिया तालुक्यातील एक सुंदर गाव आहे.
+                आमच्या ग्रामपंचायतचे उद्दिष्ट ग्रामीण भागातील लोकांच्या जीवनमानात सुधारणा करणे
                 आणि सर्वांना मूलभूत सुविधा उपलब्ध करून देणे हे आहे.
               </p>
               <Link to="/about" className="btn btn-outline">अधिक जाणून घ्या</Link>
             </div>
             <div className="about-image">
-              <img src="/images/village.jpg" alt="Tandulwadi Village" />
+              <img src="/images/village.jpg" alt="Tanda Village" />
             </div>
           </div>
         </div>
@@ -147,7 +148,7 @@ const Home: React.FC = () => {
           </div>
           <div className="gallery-grid">
             <div className="gallery-item">
-              <img src="/images/gallery-1.jpg" alt="गाव विकास कार्यक्रम" />
+              <img src={gp1} alt="गाव विकास कार्यक्रम" />
               <div className="gallery-overlay">
                 <h3>गाव विकास कार्यक्रम</h3>
               </div>
