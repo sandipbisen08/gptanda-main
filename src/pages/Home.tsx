@@ -71,7 +71,7 @@ const Home: React.FC = () => {
   const [counts, setCounts] = useState(stats.map(() => 0));
   useEffect(() => {
     const intervals = stats.map((stat, i) => setInterval(() => {
-      setCounts(prev => prev.map((c, idx) => idx === i ? (c < stat.value ? +(c + Math.ceil((stat.value/40))) : stat.value) : c));
+      setCounts(prev => prev.map((c, idx) => idx === i ? (c < stat.value ? +(c + Math.ceil((stat.value / 40))) : stat.value) : c));
     }, 40));
     return () => intervals.forEach(clearInterval);
   }, [stats]);
