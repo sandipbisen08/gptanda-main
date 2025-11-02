@@ -113,8 +113,8 @@ const Contact: React.FC = () => {
                 </div>
                 <div className="info-text">
                   <h3>ईमेल</h3>
-                  <p>tandalwadigp@example.com</p>
-                  <p>info@tandalwadigp.gov.in</p>
+                  <p>tandagp@example.com</p>
+                  <p>info@tandagp.gov.in</p>
                 </div>
               </div>
 

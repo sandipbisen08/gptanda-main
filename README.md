@@ -168,7 +168,7 @@ This project is open source and available under the MIT License.
 ### Contact
 
 For inquiries about this website:
-- **Email**: tandalwadigp@example.com
+- **Email**: tandagp@example.com
 - **Phone**: +91 XXXXXXXXXX
 - **Address**: Tanda, Tal. Gondia, Dist. Gondia, Maharashtra
 
