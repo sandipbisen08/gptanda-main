@@ -74,6 +74,7 @@ const Home: React.FC = () => {
             </div>
             <div className="about-image">
               <img src={gp3} alt="गाव विकास कार्यक्रम" />
+              {/* {src: gp1, title: 'गाव विकास कार्यक्रम' } */}
             </div>
           </div>
         </div>
