@@ -16,11 +16,11 @@ const Navbar: React.FC = () => {
         <Link to="/" className="navbar-logo">
           तांडा ग्रामपंचायत
         </Link>
-        
+
         <div className="menu-icon" onClick={toggleMenu}>
           {isOpen ? <FaTimes /> : <FaBars />}
         </div>
-        
+
         <ul className={isOpen ? 'nav-menu active' : 'nav-menu'}>
           <li className="nav-item">
             <Link to="/" className="nav-links" onClick={toggleMenu}>
@@ -35,6 +35,11 @@ const Navbar: React.FC = () => {
           <li className="nav-item">
             <Link to="/services" className="nav-links" onClick={toggleMenu}>
               सेवा
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/gallery" className="nav-links" onClick={toggleMenu}>
+              गॅलरी
             </Link>
           </li>
           <li className="nav-item dropdown">

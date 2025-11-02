@@ -4,6 +4,11 @@ import { FaTools, FaEnvelope, FaBullhorn, FaUsers } from 'react-icons/fa';
 import SEO from '../components/SEO';
 import './Home.scss';
 import gp1 from '../images/gp1.jpg';
+import gp2 from '../images/gp2.jpg';
+import gp3 from '../images/gp3.jpg';
+import gp4 from '../images/gp4.jpg';
+import gp5 from '../images/gp5.jpg';
+import gp6 from '../images/gp6.jpg';
 
 const Home: React.FC = () => {
   const structuredData = {
@@ -68,7 +73,7 @@ const Home: React.FC = () => {
               <Link to="/about" className="btn btn-outline">अधिक जाणून घ्या</Link>
             </div>
             <div className="about-image">
-              <img src="/images/village.jpg" alt="Tanda Village" />
+              <img src={gp3} alt="गाव विकास कार्यक्रम" />
             </div>
           </div>
         </div>
@@ -147,42 +152,22 @@ const Home: React.FC = () => {
             <p>गावातील कार्यक्रम आणि विकास प्रकल्प</p>
           </div>
           <div className="gallery-grid">
-            <div className="gallery-item">
-              <img src={gp1} alt="गाव विकास कार्यक्रम" />
-              <div className="gallery-overlay">
-                <h3>गाव विकास कार्यक्रम</h3>
+            {[
+              { src: gp1, title: 'गाव विकास कार्यक्रम' },
+              { src: gp2, title: 'स्वच्छता अभियान' },
+              { src: gp3, title: 'शिक्षा कार्यक्रम' },
+              { src: gp4, title: 'सामाजिक कार्यक्रम' },
+              { src: gp5, title: 'कृषि विकास' },
+              { src: gp6, title: 'महिला सशक्तिकरण' }
+
+            ].map((img, idx) => (
+              <div className="gallery-item" key={idx}>
+                <img src={img.src} alt={img.title} />
+                <div className="gallery-overlay">
+                  <h3>{img.title}</h3>
+                </div>
               </div>
-            </div>
-            <div className="gallery-item">
-              <img src="/images/gallery-2.jpg" alt="स्वच्छता अभियान" />
-              <div className="gallery-overlay">
-                <h3>स्वच्छता अभियान</h3>
-              </div>
-            </div>
-            <div className="gallery-item">
-              <img src="/images/gallery-3.jpg" alt="शिक्षा कार्यक्रम" />
-              <div className="gallery-overlay">
-                <h3>शिक्षा कार्यक्रम</h3>
-              </div>
-            </div>
-            <div className="gallery-item">
-              <img src="/images/gallery-4.jpg" alt="सामाजिक कार्यक्रम" />
-              <div className="gallery-overlay">
-                <h3>सामाजिक कार्यक्रम</h3>
-              </div>
-            </div>
-            <div className="gallery-item">
-              <img src="/images/gallery-5.jpg" alt="कृषि विकास" />
-              <div className="gallery-overlay">
-                <h3>कृषि विकास</h3>
-              </div>
-            </div>
-            <div className="gallery-item">
-              <img src="/images/gallery-6.jpg" alt="महिला सशक्तिकरण" />
-              <div className="gallery-overlay">
-                <h3>महिला सशक्तिकरण</h3>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

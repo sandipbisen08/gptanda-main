@@ -10,6 +10,7 @@ import Sarpanch from './pages/Sarpanch';
 import Upsarpanch from './pages/Upsarpanch';
 import Gramsevak from './pages/Gramsevak';
 import Adhyaksha from './pages/Adhyaksha';
+import Gallery from './pages/Gallery';
 import './App.scss';
 
 const App: React.FC = () => {
@@ -20,6 +21,7 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/sarpanch" element={<Sarpanch />} />
