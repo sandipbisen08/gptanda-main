@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaTools, FaEnvelope, FaBullhorn, FaUsers } from 'react-icons/fa';
 import SEO from '../components/SEO';
@@ -9,6 +9,10 @@ import gp3 from '../images/gp3.jpg';
 import gp4 from '../images/gp4.jpg';
 import gp5 from '../images/gp5.jpg';
 import gp6 from '../images/gp6.jpg';
+import gp7 from '../images/gp7.jpg';
+import gp8 from '../images/gp8.jpg';
+import gp9 from '../images/gp9.jpg';
+import gp10 from '../images/gp10.jpg';
 
 const Home: React.FC = () => {
   const structuredData = {
@@ -33,8 +37,52 @@ const Home: React.FC = () => {
     }
   };
 
+  // Hero background slider
+  const heroImages = [gp1, gp2, gp3, gp4, gp5, gp6, gp7, gp8, gp9, gp10];
+  const [heroIdx, setHeroIdx] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => setHeroIdx(i => (i + 1) % heroImages.length), 4000);
+    return () => clearInterval(interval);
+  }, [heroImages.length]);
+
+  // Animated welcome text
+  const welcomeText = 'तांडा ग्रामपंचायत मध्ये आपले स्वागत आहे';
+  const [displayedText, setDisplayedText] = useState('');
+  useEffect(() => {
+    let idx = 0;
+    setDisplayedText('');
+    const interval = setInterval(() => {
+      setDisplayedText(welcomeText.slice(0, idx + 1));
+      idx++;
+      if (idx >= welcomeText.length) clearInterval(interval);
+    }, 60);
+    return () => clearInterval(interval);
+  }, [welcomeText]);
+
+  // Animated counters data
+  const stats = React.useMemo(() => [
+    { label: 'एकूण लोकसंख्या', value: 2526, icon: '👥' },
+    { label: 'एकूण क्षेत्रफळ (हे.)', value: 429.75, icon: '🌾' },
+    { label: 'शाळा', value: 1, icon: '🏫' },
+    { label: 'सदस्य संख्या', value: 9, icon: '👤' },
+    { label: 'बचत गट', value: 51, icon: '💰' },
+    { label: 'पुरस्कार', value: 5, icon: '🏆' }
+  ], []);
+  const [counts, setCounts] = useState(stats.map(() => 0));
+  useEffect(() => {
+    const intervals = stats.map((stat, i) => setInterval(() => {
+      setCounts(prev => prev.map((c, idx) => idx === i ? (c < stat.value ? +(c + Math.ceil((stat.value/40))) : stat.value) : c));
+    }, 40));
+    return () => intervals.forEach(clearInterval);
+  }, [stats]);
+
   return (
     <div className="home">
+      {/* Maharashtra Government Banner */}
+      <div className="govt-banner">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Seal_of_Maharashtra.png/80px-Seal_of_Maharashtra.png" alt="महाराष्ट्र शासन" className="govt-emblem" />
+        <span className="govt-text">महाराष्ट्र शासन</span>
+      </div>
       <SEO
         title="तांडा ग्रामपंचायत | Tand Grampanchayat - आधिकारिक वेबसाइट"
         description="तांडा ग्रामपंचायत - गोंदिया जिल्ह्यातील गोंदिया तालुक्यातील आधिकारिक ग्रामपंचायत वेबसाइट। सेवा, जाहिराती, नेतृत्व आणि ग्रामीण विकास कार्यक्रम।"
@@ -44,11 +92,11 @@ const Home: React.FC = () => {
         canonicalUrl="https://tandgrampanchayat.gov.in"
         structuredData={structuredData}
       />
-      {/* Hero Section */}
-      <section className="hero">
-        <div className="hero-content">
-          <h1>तांडा ग्रामपंचायत मध्ये आपले स्वागत आहे</h1>
-          <p>सर्वांसाठी, सर्वांच्या विकासासाठी</p>
+      {/* Hero Section with animated slider and text */}
+      <section className="hero" style={{ backgroundImage: `url(${heroImages[heroIdx]})`, backgroundSize: 'cover', backgroundPosition: 'center', transition: 'background-image 1s' }}>
+        <div className="hero-content" style={{ background: 'rgba(0,0,0,0.45)', borderRadius: '18px', padding: '2rem' }}>
+          <h1 style={{ minHeight: 48, fontWeight: 700, letterSpacing: 1 }}>{displayedText}<span className="blinking-cursor">|</span></h1>
+          <p style={{ fontSize: '1.5rem', fontWeight: 500, marginBottom: 24 }}>सर्वांसाठी, सर्वांच्या विकासासाठी</p>
           <div className="cta-buttons">
             <Link to="/services" className="btn btn-primary">आमच्या सेवा</Link>
             <Link to="/contact" className="btn btn-secondary">संपर्क साधा</Link>
@@ -56,6 +104,18 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Stats/Counters Section */}
+      <section className="stats-section">
+        <div className="container stats-grid">
+          {stats.map((stat, i) => (
+            <div className="stat-card" key={stat.label}>
+              <div className="stat-icon">{stat.icon}</div>
+              <div className="stat-value">{counts[i]}<span className="stat-plus">{stat.value > 10 ? '+' : ''}</span></div>
+              <div className="stat-label">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
       {/* About Section */}
       <section className="about-section">
         <div className="container">
