@@ -39,6 +39,22 @@
     .profile-image {
       display: flex;
       justify-content: center;
+      align-items: center;
+
+      img {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        object-fit: cover;
+        aspect-ratio: 1;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
 
       .placeholder-image {
         width: 300px;

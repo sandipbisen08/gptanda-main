@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 import SEO from '../components/SEO';
+import upsarpanchImg from '../images/leaders/upsarpanch.jpg';
 import './Officials.scss';
 
 const Upsarpanch: React.FC = () => {
@@ -48,7 +49,8 @@ const Upsarpanch: React.FC = () => {
         <div className="container">
           <div className="profile-grid">
             <div className="profile-image">
-              <div className="placeholder-image large">उपसरपंच</div>
+              {/* <div className="placeholder-image large">उपसरपंच</div> */}
+              <img src={upsarpanchImg} alt="upsarpanch" />
             </div>
             <div className="profile-info">
               <h2>उपसरपंच</h2>

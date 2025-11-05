@@ -5,9 +5,14 @@ import './Navbar.scss';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
   };
 
   return (
@@ -43,25 +48,40 @@ const Navbar: React.FC = () => {
             </Link>
           </li>
           <li className="nav-item dropdown">
-            <span className="nav-links">नेतृत्व</span>
-            <ul className="dropdown-menu">
+            <span className="nav-links dropdown-toggle" onClick={toggleDropdown}>
+              नेतृत्व
+              <span className={`dropdown-arrow ${isDropdownOpen ? 'open' : ''}`}>▼</span>
+            </span>
+            <ul className={`dropdown-menu ${isDropdownOpen ? 'active' : ''}`}>
               <li>
-                <Link to="/sarpanch" className="dropdown-link" onClick={toggleMenu}>
+                <Link to="/sarpanch" className="dropdown-link" onClick={() => {
+                  toggleMenu();
+                  setIsDropdownOpen(false);
+                }}>
                   सरपंच
                 </Link>
               </li>
               <li>
-                <Link to="/upsarpanch" className="dropdown-link" onClick={toggleMenu}>
+                <Link to="/upsarpanch" className="dropdown-link" onClick={() => {
+                  toggleMenu();
+                  setIsDropdownOpen(false);
+                }}>
                   उपसरपंच
                 </Link>
               </li>
               <li>
-                <Link to="/gramsevak" className="dropdown-link" onClick={toggleMenu}>
+                <Link to="/gramsevak" className="dropdown-link" onClick={() => {
+                  toggleMenu();
+                  setIsDropdownOpen(false);
+                }}>
                   ग्रामसेवक
                 </Link>
               </li>
               <li>
-                <Link to="/adhyaksha" className="dropdown-link" onClick={toggleMenu}>
+                <Link to="/adhyaksha" className="dropdown-link" onClick={() => {
+                  toggleMenu();
+                  setIsDropdownOpen(false);
+                }}>
                   अध्यक्ष
                 </Link>
               </li>
