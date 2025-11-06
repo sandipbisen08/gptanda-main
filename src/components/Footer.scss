@@ -1,8 +1,11 @@
 .footer {
   background: linear-gradient(135deg, #0F172A 0%, #0E9F6E 50%, #0F172A 100%);
+  // background-image: url("../images/bgfooter.jpg");
+  background-size: cover;
+  background-position: center;
   color: white;
   padding: 80px 20px 30px;
-  margin-top: 100px;
+  // margin-top: 100px;
   position: relative;
   overflow: hidden;
 
