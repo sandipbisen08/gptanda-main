@@ -51,7 +51,9 @@ const Sarpanch: React.FC = () => {
             <div className="profile-image">
               <img src={sarpanchImg} alt="sarpanch" />
               {/* <div className="placeholder-image large">सरपंच</div> */}
+              <h3>श्रीमती सौ. वर्षा दिपक पटले</h3>
             </div>
+            
             <div className="profile-info">
               <h2>ग्रामपंचायत सरपंच</h2>
               <p className="designation">Sarpanch (Village Head)</p>

@@ -51,6 +51,7 @@ const Gramsevak: React.FC = () => {
             <div className="profile-image">
               {/* <div className="placeholder-image large">ग्रामसेवक</div> */}
               <img src={gramsevakImg} alt="gramsevak" />
+              <h3>कु.साधना टेकचंद बिसेन</h3>
             </div>
             <div className="profile-info">
               <h2>ग्रामसेवक</h2>

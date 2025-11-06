@@ -117,10 +117,10 @@ const Home: React.FC = () => {
       />
 
       <SEO
-        title="तांडा ग्रामपंचायत | Tand Grampanchayat - आधिकारिक वेबसाइट"
+        title="तांडा ग्रामपंचायत | Tanda Grampanchayat - आधिकारिक वेबसाइट"
         description="तांडा ग्रामपंचायत - गोंदिया जिल्ह्यातील गोंदिया तालुक्यातील आधिकारिक ग्रामपंचायत वेबसाइट। सेवा, जाहिराती, नेतृत्व आणि ग्रामीण विकास कार्यक्रम।"
         keywords="तांडा, ग्रामपंचायत, गोंदिया, महाराष्ट्र, गोंदिया, सरपंच, ग्रामीण विकास, सेवा"
-        ogTitle="तांडा ग्रामपंचायत | Tand Grampanchayat"
+        ogTitle="तांडा ग्रामपंचायत | Tanda Grampanchayat"
         ogDescription="तांडा ग्रामपंचायत - आधिकारिक ग्रामपंचायत वेबसाइट"
         canonicalUrl="https://tandgrampanchayat.gov.in"
         structuredData={structuredData}

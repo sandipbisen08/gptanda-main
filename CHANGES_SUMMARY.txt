@@ -237,7 +237,7 @@ PAGES WITH SEO OPTIMIZATION
 ================================================================================
 
 1. Home Page (/)
-   - Title: तांडा ग्रामपंचायत | Tand Grampanchayat - आधिकारिक वेबसाइट
+   - Title: तांडा ग्रामपंचायत | Tanda Grampanchayat - आधिकारिक वेबसाइट
    - Schema: LocalBusiness
    - Keywords: तांडा, ग्रामपंचायत, गोंदिया, महाराष्ट्र, गोंदिया, सरपंच
 

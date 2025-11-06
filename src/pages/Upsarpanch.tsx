@@ -51,6 +51,7 @@ const Upsarpanch: React.FC = () => {
             <div className="profile-image">
               {/* <div className="placeholder-image large">उपसरपंच</div> */}
               <img src={upsarpanchImg} alt="upsarpanch" />
+              <h3>श्री नीलेश्वर तेजराम कारंजेक</h3>
             </div>
             <div className="profile-info">
               <h2>उपसरपंच</h2>
