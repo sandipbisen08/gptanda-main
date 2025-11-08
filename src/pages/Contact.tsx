@@ -233,7 +233,7 @@ const Contact: React.FC = () => {
             <div className="map-container">
               <iframe
                 title="तांडा ग्रामपंचायत स्थान"
-                src="https://www.google.com/maps/place/Gram+Panchayat+Tanda/@21.3953578,80.2628134,17z/data=!4m6!3m5!1s0x3a2bafc42e29b181:0xec83540ed7ee164d!8m2!3d21.3953543!4d80.2628182!16s%2Fg%2F11t2282_8g?entry=ttu&g_ep=EgoyMDI1MTEwNC4xIKXMDSoASAFQAw%3D%3D"
+                src="https://www.google.com/maps/place/Gram+Panchayat+Tanda/@21.3877274,80.1741351,10.68z/data=!4m14!1m7!3m6!1s0x3a2bafc42e29b181:0xec83540ed7ee164d!2sGram+Panchayat+Tanda!8m2!3d21.3953543!4d80.2628182!16s%2Fg%2F11t2282_8g!3m5!1s0x3a2bafc42e29b181:0xec83540ed7ee164d!8m2!3d21.3953543!4d80.2628182!16s%2Fg%2F11t2282_8g?entry=ttu&g_ep=EgoyMDI1MTEwNC4xIKXMDSoASAFQAw%3D%3D"
                 width="100%"
                 height="400"
                 style={{ border: 0, borderRadius: '8px' }}
