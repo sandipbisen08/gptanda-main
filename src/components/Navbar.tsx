@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import './Navbar.scss';
+import gptandalogo from '../images/tanda-logo-new.png';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const location = useLocation();
+
+  const isActive = (path: string) => location.pathname === path;
+  const leadershipPaths = ['/sarpanch', '/upsarpanch', '/gramsevak', '/adhyaksha'];
+  const isLeadershipActive = leadershipPaths.some(p => location.pathname.startsWith(p));
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -19,8 +25,11 @@ const Navbar: React.FC = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          तांडा ग्रामपंचायत
+          <img src={gptandalogo} alt="" />
         </Link>
+        {/* <Link to="/" className="navbar-logo">
+          तांडा ग्रामपंचायत
+        </Link> */}
 
         <div className="menu-icon" onClick={toggleMenu}>
           {isOpen ? <FaTimes /> : <FaBars />}
@@ -28,33 +37,33 @@ const Navbar: React.FC = () => {
 
         <ul className={isOpen ? 'nav-menu active' : 'nav-menu'}>
           <li className="nav-item">
-            <Link to="/" className="nav-links" onClick={toggleMenu}>
+            <Link to="/" className={`nav-links ${isActive('/') ? 'active' : ''}`} onClick={toggleMenu}>
               मुख्यपृष्ठ
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/about" className="nav-links" onClick={toggleMenu}>
+            <Link to="/about" className={`nav-links ${isActive('/about') ? 'active' : ''}`} onClick={toggleMenu}>
               आमच्याबद्दल
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/services" className="nav-links" onClick={toggleMenu}>
+            <Link to="/services" className={`nav-links ${isActive('/services') ? 'active' : ''}`} onClick={toggleMenu}>
               सेवा
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/gallery" className="nav-links" onClick={toggleMenu}>
+            <Link to="/gallery" className={`nav-links ${isActive('/gallery') ? 'active' : ''}`} onClick={toggleMenu}>
               गॅलरी
             </Link>
           </li>
           <li className="nav-item dropdown">
-            <span className="nav-links dropdown-toggle" onClick={toggleDropdown}>
+            <span className={`nav-links dropdown-toggle ${isLeadershipActive ? 'active' : ''}`} onClick={toggleDropdown}>
               नेतृत्व
               <span className={`dropdown-arrow ${isDropdownOpen ? 'open' : ''}`}>▼</span>
             </span>
             <ul className={`dropdown-menu ${isDropdownOpen ? 'active' : ''}`}>
               <li>
-                <Link to="/sarpanch" className="dropdown-link" onClick={() => {
+                <Link to="/sarpanch" className={`dropdown-link ${isActive('/sarpanch') ? 'active' : ''}`} onClick={() => {
                   toggleMenu();
                   setIsDropdownOpen(false);
                 }}>
@@ -62,7 +71,7 @@ const Navbar: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/upsarpanch" className="dropdown-link" onClick={() => {
+                <Link to="/upsarpanch" className={`dropdown-link ${isActive('/upsarpanch') ? 'active' : ''}`} onClick={() => {
                   toggleMenu();
                   setIsDropdownOpen(false);
                 }}>
@@ -70,7 +79,7 @@ const Navbar: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/gramsevak" className="dropdown-link" onClick={() => {
+                <Link to="/gramsevak" className={`dropdown-link ${isActive('/gramsevak') ? 'active' : ''}`} onClick={() => {
                   toggleMenu();
                   setIsDropdownOpen(false);
                 }}>
@@ -78,7 +87,7 @@ const Navbar: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/adhyaksha" className="dropdown-link" onClick={() => {
+                <Link to="/adhyaksha" className={`dropdown-link ${isActive('/adhyaksha') ? 'active' : ''}`} onClick={() => {
                   toggleMenu();
                   setIsDropdownOpen(false);
                 }}>
@@ -88,7 +97,7 @@ const Navbar: React.FC = () => {
             </ul>
           </li>
           <li className="nav-item">
-            <Link to="/contact" className="nav-links" onClick={toggleMenu}>
+            <Link to="/contact" className={`nav-links ${isActive('/contact') ? 'active' : ''}`} onClick={toggleMenu}>
               संपर्क
             </Link>
           </li>
