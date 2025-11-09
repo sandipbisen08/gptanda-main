@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaRoad, FaTint, FaLeaf, FaBook, FaHeartbeat, FaUsers, FaHome, FaRecycle } from 'react-icons/fa';
+import { FaRoad, FaTint, FaHeartbeat, FaUsers, FaHome, FaRecycle } from 'react-icons/fa';
 import SEO from '../components/SEO';
 import './Services.scss';
 

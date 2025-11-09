@@ -51,24 +51,6 @@ const Home: React.FC = () => {
     return () => clearInterval(interval);
   }, [heroImages.length, autoPlay]);
 
-  const goToSlide = (index: number) => {
-    setHeroIdx(index);
-    setAutoPlay(false);
-    setTimeout(() => setAutoPlay(true), 5000);
-  };
-
-  const nextSlide = () => {
-    setHeroIdx(i => (i + 1) % heroImages.length);
-    setAutoPlay(false);
-    setTimeout(() => setAutoPlay(true), 5000);
-  };
-
-  const prevSlide = () => {
-    setHeroIdx(i => (i - 1 + heroImages.length) % heroImages.length);
-    setAutoPlay(false);
-    setTimeout(() => setAutoPlay(true), 5000);
-  };
-
   // Animated welcome text
   const welcomeText = 'तांडा ग्रामपंचायत मध्ये आपले स्वागत आहे';
   const [displayedText, setDisplayedText] = useState('');
@@ -82,23 +64,6 @@ const Home: React.FC = () => {
     }, 60);
     return () => clearInterval(interval);
   }, [welcomeText]);
-
-  // Animated counters data
-  const stats = React.useMemo(() => [
-    { label: 'एकूण लोकसंख्या', value: 2526, icon: '👥' },
-    { label: 'एकूण क्षेत्रफळ (हे.)', value: 429.75, icon: '🌾' },
-    { label: 'शाळा', value: 1, icon: '🏫' },
-    { label: 'सदस्य संख्या', value: 9, icon: '👤' },
-    { label: 'बचत गट', value: 51, icon: '💰' },
-    { label: 'पुरस्कार', value: 5, icon: '🏆' }
-  ], []);
-  const [counts, setCounts] = useState(stats.map(() => 0));
-  useEffect(() => {
-    const intervals = stats.map((stat, i) => setInterval(() => {
-      setCounts(prev => prev.map((c, idx) => idx === i ? (c < stat.value ? +(c + Math.ceil((stat.value / 40))) : stat.value) : c));
-    }, 40));
-    return () => intervals.forEach(clearInterval);
-  }, [stats]);
 
   // About section toggle state
   const [showMoreAbout, setShowMoreAbout] = useState(false);

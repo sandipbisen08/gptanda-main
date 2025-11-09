@@ -802,3 +802,9 @@
     transform: translateY(0);
   }
 }
+@media screen and (max-width: 768px) {
+  .announcement-video-full { 
+    max-height: 300px !important;
+    
+  }
+}
