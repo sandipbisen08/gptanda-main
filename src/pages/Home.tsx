@@ -19,7 +19,6 @@ import new1 from '../images/new1.jpg';
 import new2 from '../images/new2.jpg';
 import new3 from '../images/new3.jpg';
 import gptandaVideo from '../videos/gptanda2.mp4';
-import gptandaVideoAlt from '../videos/gptanda1.mp4';
 import gptandaVideo2 from '../videos/gptanda1.mp4';
 import gptandaVideo3 from '../videos/gptanda3.mp4';
 
