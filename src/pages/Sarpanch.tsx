@@ -5,6 +5,10 @@ import sarpanchImg from '../images/leaders/sarpanch.jpg';
 import './Officials.scss';
 
 const Sarpanch: React.FC = () => {
+  const preventImgActions = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Person',
@@ -49,7 +53,14 @@ const Sarpanch: React.FC = () => {
         <div className="container">
           <div className="profile-grid">
             <div className="profile-image">
-              <img src={sarpanchImg} alt="sarpanch" />
+              <img
+                src={sarpanchImg}
+                alt="sarpanch"
+                className="no-download"
+                draggable={false}
+                onContextMenu={preventImgActions}
+                onDragStart={preventImgActions}
+              />
               {/* <div className="placeholder-image large">सरपंच</div> */}
               <h3>श्रीमती सौ. वर्षा दिपक पटले</h3>
             </div>

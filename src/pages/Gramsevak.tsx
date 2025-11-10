@@ -5,6 +5,10 @@ import gramsevakImg from '../images/leaders/gramsevak.jpg';
 import './Officials.scss';
 
 const Gramsevak: React.FC = () => {
+  const preventImgActions = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Person',
@@ -50,7 +54,14 @@ const Gramsevak: React.FC = () => {
           <div className="profile-grid">
             <div className="profile-image">
               {/* <div className="placeholder-image large">ग्रामसेवक</div> */}
-              <img src={gramsevakImg} alt="gramsevak" />
+              <img
+                src={gramsevakImg}
+                alt="gramsevak"
+                className="no-download"
+                draggable={false}
+                onContextMenu={preventImgActions}
+                onDragStart={preventImgActions}
+              />
               <h3>कु.साधना टेकचंद बिसेन</h3>
             </div>
             <div className="profile-info">

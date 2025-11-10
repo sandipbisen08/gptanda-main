@@ -97,7 +97,7 @@ const About: React.FC = () => {
             <h2>आमच्या गावाचे आंकडे</h2>
             <div className="stats-grid">
               <div className="stat-card">
-                <h3>~५०००</h3>
+                <h3>~२७८२</h3>
                 <p>एकूण लोकसंख्या</p>
               </div>
               <div className="stat-card">
@@ -116,7 +116,7 @@ const About: React.FC = () => {
           </div>
 
           {/* Leadership */}
-          <div className="leadership">
+          {/* <div className="leadership">
             <h2>नेतृत्व</h2>
             <div className="leadership-grid">
               <div className="leader-card">
@@ -146,7 +146,7 @@ const About: React.FC = () => {
                 <p className="contact">संपर्क: XXXXXXXXXX</p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>

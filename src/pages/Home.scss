@@ -494,14 +494,32 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    max-height: 650px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    padding-right: 6px;
+
+    /* scrollbar style */
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: rgba(14, 159, 110, 0.35);
+      border-radius: 8px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: rgba(14, 159, 110, 0.55);
+    }
 
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
       gap: 1.5rem;
+      max-height: 520px;
     }
 
     @media (max-width: 480px) {
       gap: 1rem;
+      max-height: 460px;
     }
   }
 
@@ -738,7 +756,7 @@
     img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      // object-fit: cover;
       transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
       display: block;
     }

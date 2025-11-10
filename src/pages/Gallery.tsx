@@ -29,6 +29,12 @@ const Gallery: React.FC = () => {
     const [current, setCurrent] = useState(0);
     const [lightboxOpen, setLightboxOpen] = useState(false);
 
+    // Prevent right-click and drag-save on images
+    const preventImgActions = (e: React.SyntheticEvent) => {
+        e.preventDefault();
+        e.stopPropagation();
+    };
+
     const prev = useCallback(() => setCurrent((c) => (c - 1 + images.length) % images.length), [images.length]);
     const next = useCallback(() => setCurrent((c) => (c + 1) % images.length), [images.length]);
 
@@ -59,24 +65,23 @@ const Gallery: React.FC = () => {
                         <p>गावातील कार्यक्रम आणि विकास प्रकल्प</p>
                     </div>
 
-                    <div className="viewer">
-                        <button className="nav nav-left" aria-label="Previous" onClick={prev}>&larr;</button>
-                        <div className="main-image" onClick={() => setLightboxOpen(true)}>
-                            <img src={images[current].src} alt={images[current].title} />
-                            <div className="caption">{images[current].title}</div>
-                        </div>
-                        <button className="nav nav-right" aria-label="Next" onClick={next}>&rarr;</button>
-                    </div>
-
                     <div className="thumbnails">
                         {images.map((img, idx) => (
                             <button
                                 key={idx}
                                 className={`thumb ${idx === current ? 'active' : ''}`}
-                                onClick={() => setCurrent(idx)}
+                                onClick={() => { setCurrent(idx); setLightboxOpen(true); }}
+                                onContextMenu={preventImgActions}
                                 aria-label={`Open ${img.title}`}
                             >
-                                <img src={img.src} alt={img.title} />
+                                <img
+                                    src={img.src}
+                                    alt={img.title}
+                                    className="no-download"
+                                    draggable={false}
+                                    onContextMenu={preventImgActions}
+                                    onDragStart={preventImgActions}
+                                />
                             </button>
                         ))}
                     </div>
@@ -88,7 +93,14 @@ const Gallery: React.FC = () => {
                     <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
                         <button className="close" onClick={closeLightbox} aria-label="Close">✕</button>
                         <button className="nav nav-left" onClick={prev} aria-label="Previous">‹</button>
-                        <img src={images[current].src} alt={images[current].title} />
+                        <img
+                            src={images[current].src}
+                            alt={images[current].title}
+                            className="no-download"
+                            draggable={false}
+                            onContextMenu={preventImgActions}
+                            onDragStart={preventImgActions}
+                        />
                         <button className="nav nav-right" onClick={next} aria-label="Next">›</button>
                         <div className="lightbox-caption">{images[current].title}</div>
                     </div>

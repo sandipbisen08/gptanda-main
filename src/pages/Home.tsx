@@ -15,7 +15,13 @@ import gp8 from '../images/gp8.jpg';
 import gp9 from '../images/gp9.jpg';
 import gp10 from '../images/gp10.jpg';
 import gptanda from '../images/gptanda.jpg';
+import new1 from '../images/new1.jpg';
+import new2 from '../images/new2.jpg';
+import new3 from '../images/new3.jpg';
 import gptandaVideo from '../videos/gptanda2.mp4';
+import gptandaVideoAlt from '../videos/gptanda1.mp4';
+import gptandaVideo2 from '../videos/gptanda1.mp4';
+import gptandaVideo3 from '../videos/gptanda3.mp4';
 
 const Home: React.FC = () => {
   const structuredData = {
@@ -23,7 +29,7 @@ const Home: React.FC = () => {
     '@type': 'LocalBusiness',
     name: 'Tanda Grampanchayat',
     description: 'तांडा ग्रामपंचायत - गोंदिया जिल्ह्यातील गोंदिया तालुक्यातील आधिकारिक ग्रामपंचायत',
-    url: 'https://tandgrampanchayat.gov.in',
+    url: 'https://gptandagondia.org.in',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Tanda',
@@ -67,6 +73,17 @@ const Home: React.FC = () => {
 
   // About section toggle state
   const [showMoreAbout, setShowMoreAbout] = useState(false);
+
+  // Ensure only one video plays at a time
+  const handleVideoPlay = (e: React.SyntheticEvent<HTMLVideoElement>) => {
+    const current = e.currentTarget;
+    const all = Array.from(document.querySelectorAll('video')) as HTMLVideoElement[];
+    all.forEach(v => {
+      if (v !== current && !v.paused) {
+        v.pause();
+      }
+    });
+  };
 
   return (
     <div className="home">
@@ -126,7 +143,7 @@ const Home: React.FC = () => {
           <div className="about-content">
             <div className="about-text">
               <p>
-                मुख्यमंत्री समृध्द पंचायत राज अभियान अंतर्गत ग्रामपंचायत कार्यालय तांडा याची स्थापना सन १९५२ ला झालेली आहे. आमच्या तांडा या गावाचे प्रथम सरपंच श्री भोजराजसिंह गणपतसिंह [सोमवंशी हे सन १९५३ ते १९५७ पर्यंत  गावाचे प्रथम सरपंच होते तेव्हापासून आमचा तांडा हे गाव सतत विकासाच्या वाटेने वाटचाल करीत आहे आता पर्यंत  गावात एकूण १८ सरपंच झालेले आहेत सध्या स्थितीत १९ वे सरपंच सौ.वर्षाताई दीपक पटले  व उपसरपंच श्री निलेस्वर  तेजरामजी कारंजेकर व इतर ०८ सदस्य १०/०१/२०२३ पासून कार्यरत आहेत.
+                मुख्यमंत्री समृध्द पंचायत राज अभियान अंतर्गत ग्रामपंचायत कार्यालय तांडा याची स्थापना सन १९५२ ला झालेली आहे. आमच्या तांडा या गावाचे प्रथम सरपंच श्री भोजराजसिंह गणपतसिंह सोमवंशी हे सन १९५३ ते १९५७ पर्यंत  गावाचे प्रथम सरपंच होते तेव्हापासून आमचा तांडा हे गाव सतत विकासाच्या वाटेने वाटचाल करीत आहे आता पर्यंत  गावात एकूण १८ सरपंच झालेले आहेत सध्या स्थितीत १९ वे सरपंच सौ.वर्षाताई दीपक पटले  व उपसरपंच श्री निलेस्वर  तेजरामजी कारंजेकर व इतर ०८ सदस्य १०/०१/२०२३ पासून कार्यरत आहेत.
                 तांडा हे गाव गोंदिया ते आमगाव (NH -५४३ ) महामार्गावर वसलेले गाव आहे या गावाचे भौगोलिक क्षेत्र ६६४.४२ आहे या गावाची लोकसंख्या २०११ च्या जणगणनेनुसार २७८२ असून  अनुसूचित जाती २५८ ,अनुसूचित जमाती २०५ व ईतर २३१९ अशी आहे. या गावाचे  शिवाटोला,सावकारटोली व गोंडीटोला हे तीन प्रमुख टोले आहेत.या गावात क्रमांक  १,२  व ३  अंगणवाडी आहेत आणि जि.प. वरिष्ठ प्राथमिक शाळा  तांडा येथे  कॉन्वेट व १ ते ७ पर्यंत वर्ग खोल्या आहेत. व यात एकूण १७० विद्यार्थी शिक्षण घेत आहेत  जिल्हापरिषद शाळेचा आवारातमुलाकरिता व्यायाम शाळा   भव्य मोठा पंटागण आहे व यात एकूण २७० झाडे लावलेले आहेत. या गावात स्व पोहुमल हायस्कूल व बी एस सी नर्सिंग कॉलेज उपलब्ध आहे तसेच स्व.खुशाल कापसे कनिष्ट महाविधालय येथे ११ ते  पदवी पर्यंत शिक्षण उपलब्ध आहे.
                 </p>
               {showMoreAbout && (
@@ -215,14 +232,58 @@ const Home: React.FC = () => {
                   disablePictureInPicture
                   controlsList="nodownload noplaybackrate noremoteplayback"
                   onContextMenu={(e) => e.preventDefault()}
+                  onPlay={handleVideoPlay}
                 >
                   <source src={gptandaVideo} type="video/mp4" />
-                  आपल्या ब्राउझरमध्ये व्हिडिओ प्लेबॅक समर्थित नाही.
                 </video>
               </div>
               <p style={{ marginTop: '1.5rem', color: 'var(--gray-color)', lineHeight: '1.7' }}>
                 दिनांक १७/०९/२०२५ रोज बुधवारला सकाळी ठिक १०:०० वाजता ग्रामपंचायत कार्यालय तांडा येथे मुख्यमंत्री समृद्ध पंचायतराज अभियान राबविण्यासंदर्भात कार्यक्रम घेण्यात आले.सर्व प्रथम अभियानाचा राज्यस्तरीय सुभारंभ  कार्यक्रम प्रक्षेपण उपस्थित सर्वान्ना लाइव कार्यक्रम दाखविण्यात आले .व त्यानंतर विशेष ग्रामसभेला मा.सरपंच श्रीमती सौ. वर्षा दिपक पटले यांच्या अध्यक्षतेखाली  सुरुवात करण्यात आली .
               </p>
+            </div>
+            <div className="announcement announcement-video-only">
+              <div className="announcement-header">
+                <div className="announcement-date">२५/१०/२०२५</div>
+                <h3>ग्रामस्वच्छता आणि जनजागृती मोहिम</h3>
+              </div>
+              <div className="announcement-video-full">
+                <video
+                  controls
+                  width="100%"
+                  height="100%"
+                  disablePictureInPicture
+                  controlsList="nodownload noplaybackrate noremoteplayback"
+                  onContextMenu={(e) => e.preventDefault()}
+                  onPlay={handleVideoPlay}
+                >
+                  <source src={gptandaVideo2} type="video/mp4" />
+                </video>
+              </div>
+              <p style={{ marginTop: '1.5rem', color: 'var(--gray-color)', lineHeight: '1.7' }}>
+                ग्रामस्वच्छता मोहिमेअंतर्गत गावामध्ये स्वच्छता, प्लास्टिक वापरबंदी, कचरा व्यवस्थापन आणि आरोग्य जनजागृतीबाबत कार्यक्रम आयोजित करण्यात आले. ग्रामस्थांचा उत्स्फूर्त सहभाग नोंदवला गेला.
+              </p>
+            </div>
+
+            <div className="announcement announcement-video-only">
+              <div className="announcement-header">
+                <div className="announcement-date">२५/१०/२०२५</div>
+                <h3> भव्य निःशुल्क आरोग्य शिबिर कार्यक्रम</h3>
+              </div>
+              <div className="announcement-video-full">
+                <video
+                  controls
+                  width="100%"
+                  height="100%"
+                  disablePictureInPicture
+                  controlsList="nodownload noplaybackrate noremoteplayback"
+                  onContextMenu={(e) => e.preventDefault()}
+                  onPlay={handleVideoPlay}
+                >
+                  <source src={gptandaVideo3} type="video/mp4" />
+                </video>
+              </div>
+              <p style={{ marginTop: '1.5rem', color: 'var(--gray-color)', lineHeight: '1.7' }}>
+मुख्यमंत्री समृद्ध पंचायतराज अभियान कार्यक्रम अंतर्गत ग्राम पंचायत कार्यालय तांडा , व पं.समिती गोंदिया  अतंर्गत माय बहुउद्देशीय विकास सेवा संस्था द्वारा भव्य निःशुल्क आरोग्य शिबिर कार्यक्रम दिनांक १०/११/२०२५ रोज सोमवारला आयोजित करण्यात आले होते.सदर कार्यक्रमाचे अध्यक्ष मा. सौ. वर्षा दीपक पटेले सरपंच ग्राम पंचायत तांडा तसेच उद्घाटक मा. श्री. मुनेश जगन्नाथ रहांगडाले सभापती पंचायत सभापती गोंदिया तसेच मा. श्री निलेश्वरजी कारंजेकर उपसरपंच तसेच श्री.रामेश्वर जी भगत ग्रा. पं.सदस्य, श्री रमेशजी उके ग्रा.पं.सदस्य, व कु. साधना टेकचंद बिसेन ग्रा.पं.अधिकारी त्याचप्रमाणे श्री डी. एस. पटले सर (मुख्याध्यापक वरिष्ठ जी.परिषद शाळा तांडा) श्री. एस. एन टेंभेकर सर शिक्षक, त्याचप्रमाणे श्री डॉ.दीपक पटले तांडा सामाजिक कार्यकर्ता श्री.खेमराज पुंडे अध्यक्ष माजी तंटा.मु.समिती तांडा,श्री अजय पटले  अध्यक्ष माय बहुउद्देशीय विकास सेवा संस्था द्वारे आरोग्य सेवेची धुरा मा. श्री डॉ.एल.एल.बजाज ,मा.श्री.धीरज परिहार, मा.डॉ.शेख, डॉ. स्वरूप बिसेन, डॉ. व्यंकटेश माहूरे, डॉ. कृष्णकुमारी जगणे, डॉ. अल्का मेंढे आदींनी १०० ते १५० गावातील  लोकांचे आरोग्य तपासणी निःशुल्क केली.तसेच शालेय विद्यार्थ्यांची तपासणी करण्यात आली              </p>
             </div>
           </div>
         </div>
@@ -237,12 +298,12 @@ const Home: React.FC = () => {
           </div>
           <div className="gallery-grid">
             {[
-              { src: gp1, title: 'गाव विकास कार्यक्रम' },
-              { src: gp2, title: 'स्वच्छता अभियान' },
-              { src: gp3, title: 'शिक्षा कार्यक्रम' },
+              { src: new3, title: 'महिला बचत गट' },
+              { src: new2, title: 'गाव विकास कार्यक्रम' },
+              { src: new1, title: 'शिक्षा कार्यक्रम' },
               { src: gp4, title: 'सामाजिक कार्यक्रम' },
               { src: gp5, title: 'कृषि विकास' },
-              { src: gp6, title: 'महिला सशक्तिकरण' }
+              { src: gp6, title: 'कृत्रिम विसर्जन तलाव' }
 
             ].map((img, idx) => (
               <div className="gallery-item" key={idx}>

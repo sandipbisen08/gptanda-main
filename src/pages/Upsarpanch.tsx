@@ -5,6 +5,10 @@ import upsarpanchImg from '../images/leaders/upsarpanch.jpg';
 import './Officials.scss';
 
 const Upsarpanch: React.FC = () => {
+  const preventImgActions = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Person',
@@ -50,7 +54,14 @@ const Upsarpanch: React.FC = () => {
           <div className="profile-grid">
             <div className="profile-image">
               {/* <div className="placeholder-image large">उपसरपंच</div> */}
-              <img src={upsarpanchImg} alt="upsarpanch" />
+              <img
+                src={upsarpanchImg}
+                alt="upsarpanch"
+                className="no-download"
+                draggable={false}
+                onContextMenu={preventImgActions}
+                onDragStart={preventImgActions}
+              />
               <h3>श्री नीलेश्वर तेजराम कारंजेक</h3>
             </div>
             <div className="profile-info">
