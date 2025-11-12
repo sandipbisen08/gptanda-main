@@ -18,7 +18,6 @@ import gptanda from '../images/gptanda.jpg';
 import new1 from '../images/new1.jpg';
 import new2 from '../images/new2.jpg';
 import new3 from '../images/new3.jpg';
-import new4 from '../images/new4.jpg';
 import gptandaVideo from '../videos/gptanda2.mp4';
 import gptandaVideo2 from '../videos/gptanda1.mp4';
 import gptandaVideo3 from '../videos/gptanda3.mp4';
@@ -29,7 +28,7 @@ const Home: React.FC = () => {
     '@type': 'LocalBusiness',
     name: 'Tanda Grampanchayat',
     description: 'तांडा ग्रामपंचायत - गोंदिया जिल्ह्यातील गोंदिया तालुक्यातील आधिकारिक ग्रामपंचायत',
-    url: 'https://gptandagondia.org.in',
+    url: 'https://www.gptandagondia.org.in',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Tanda',
