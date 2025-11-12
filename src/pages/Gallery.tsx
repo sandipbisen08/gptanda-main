@@ -11,7 +11,10 @@ import gp7 from '../images/gp7.jpg';
 import gp8 from '../images/gp8.jpg';
 import gp9 from '../images/gp9.jpg';
 import gp10 from '../images/gp10.jpg';
-
+import gpb2 from '../images/gpb2.jpg';
+import gpb3 from '../images/gpb3.jpg';
+import gpb4 from '../images/gpb4.jpg';
+import gpb5 from '../images/gpb5.jpg';
 const Gallery: React.FC = () => {
     const images = [
         { src: gp1, title: 'चित्र 1' },
@@ -23,7 +26,11 @@ const Gallery: React.FC = () => {
         { src: gp7, title: 'चित्र 7' },
         { src: gp8, title: 'चित्र 8' },
         { src: gp9, title: 'चित्र 9' },
-        { src: gp10, title: 'चित्र 10' }
+        { src: gp10, title: 'चित्र 10' },
+        { src: gpb2, title: 'चित्र 11' },
+        { src: gpb3, title: 'चित्र 12' },
+        { src: gpb4, title: 'चित्र 13' },
+        { src: gpb5, title: 'चित्र 14' },
     ];
 
     const [current, setCurrent] = useState(0);
