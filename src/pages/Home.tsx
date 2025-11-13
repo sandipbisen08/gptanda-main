@@ -18,6 +18,8 @@ import gptanda from '../images/gptanda.jpg';
 import new1 from '../images/new1.jpg';
 import new2 from '../images/new2.jpg';
 import new3 from '../images/new3.jpg';
+import news1 from '../images/news1.jpg';
+import news2 from '../images/news2.jpg';
 import gpb3 from '../images/gpb3.jpg';
 import gptandaVideo from '../videos/gptanda2.mp4';
 import gptandaVideo2 from '../videos/gptanda1.mp4';
@@ -324,6 +326,8 @@ const Home: React.FC = () => {
           </div>
           <div className="gallery-grid">
             {[
+              { src: news1, title: 'निःशुल्क आरोग्य शिबिर' },
+              { src: news2, title: 'निःशुल्क आरोग्य शिबिर' },
               { src: new3, title: 'महिला बचत गट' },
               { src: new2, title: 'गाव विकास कार्यक्रम' },
               { src: new1, title: 'शिक्षा कार्यक्रम' },
