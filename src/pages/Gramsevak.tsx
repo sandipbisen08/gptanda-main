@@ -12,7 +12,7 @@ const Gramsevak: React.FC = () => {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'ग्रामसेवक',
+    name: 'ग्रामपंचायत अधिकारी',
     jobTitle: 'Village Administrative Officer',
     affiliation: {
       '@type': 'Organization',
@@ -31,11 +31,11 @@ const Gramsevak: React.FC = () => {
   return (
     <div className="officials-page">
       <SEO
-        title="ग्रामसेवक | तांडा ग्रामपंचायत"
-        description="तांडा ग्रामपंचायतचे ग्रामसेवक (गाव प्रशासकीय अधिकारी) यांचे संपर्क, कार्यालय वेळ आणि जिम्मेदारी।"
-        keywords="ग्रामसेवक, गाव प्रशासकीय अधिकारी, तांडा, ग्रामपंचायत, गोंदिया"
-        ogTitle="ग्रामसेवक | तांडा ग्रामपंचायत"
-        ogDescription="तांडा ग्रामपंचायतचे ग्रामसेवक यांचे संपर्क आणि जिम्मेदारी।"
+        title="ग्रामपंचायत अधिकारी | तांडा ग्रामपंचायत"
+        description="तांडा ग्रामपंचायतचे ग्रामपंचायत अधिकारी (गाव प्रशासकीय अधिकारी) यांचे संपर्क, कार्यालय वेळ आणि जिम्मेदारी।"
+        keywords="ग्रामपंचायत अधिकारी, गाव प्रशासकीय अधिकारी, तांडा, ग्रामपंचायत, गोंदिया"
+        ogTitle="ग्रामपंचायत अधिकारी | तांडा ग्रामपंचायत"
+        ogDescription="तांडा ग्रामपंचायतचे ग्रामपंचायत अधिकारी यांचे संपर्क आणि जिम्मेदारी।"
         canonicalUrl="https://tandgrampanchayat.gov.in/gramsevak"
         structuredData={structuredData}
       />
@@ -43,7 +43,7 @@ const Gramsevak: React.FC = () => {
       {/* Hero Section */}
       <section className="page-hero">
         <div className="hero-content">
-          <h1>ग्रामसेवक</h1>
+          <h1>ग्रामपंचायत अधिकारी</h1>
           <p>गाव प्रशासकीय अधिकारी</p>
         </div>
       </section>
@@ -53,7 +53,7 @@ const Gramsevak: React.FC = () => {
         <div className="container">
           <div className="profile-grid">
             <div className="profile-image">
-              {/* <div className="placeholder-image large">ग्रामसेवक</div> */}
+              {/* <div className="placeholder-image large">ग्रामपंचायत अधिकारी</div> */}
               <img
                 src={gramsevakImg}
                 alt="gramsevak"
@@ -65,13 +65,13 @@ const Gramsevak: React.FC = () => {
               <h3>कु.साधना टेकचंद बिसेन</h3>
             </div>
             <div className="profile-info">
-              <h2>ग्रामसेवक</h2>
+              <h2>ग्रामपंचायत अधिकारी</h2>
               <p className="designation">Village Administrative Officer</p>
 
               <div className="info-section">
                 <h3>संक्षिप्त परिचय</h3>
                 <p>
-                  तांडा ग्रामपंचायतचे ग्रामसेवक हे गावचे मुख्य प्रशासकीय अधिकारी आहेत.
+                  तांडा ग्रामपंचायतचे ग्रामपंचायत अधिकारी हे गावचे मुख्य प्रशासकीय अधिकारी आहेत.
                   ते ग्रामपंचायतचे सर्व प्रशासकीय कार्य संभाळतात, दस्तऐवजीकरण करतात आणि
                   सरकारी योजनांचा अंमलबजावणी करतात. ते ग्रामस्थांच्या विविध प्रमाणपत्र,
                   अर्ज आणि इतर कागदपत्रांचे कार्य पाहतात.
@@ -110,7 +110,7 @@ const Gramsevak: React.FC = () => {
       {/* Responsibilities */}
       <section className="responsibilities">
         <div className="container">
-          <h2>ग्रामसेवकचे मुख्य जिम्मेदारी</h2>
+          <h2>ग्रामपंचायत अधिकारीचे मुख्य जिम्मेदारी</h2>
           <div className="responsibilities-grid">
             <div className="responsibility-card">
               <h3>प्रशासकीय कार्य</h3>
@@ -143,7 +143,7 @@ const Gramsevak: React.FC = () => {
       {/* Services Provided */}
       <section className="services-provided">
         <div className="container">
-          <h2>ग्रामसेवकचे माध्यमातून उपलब्ध सेवा</h2>
+          <h2>ग्रामपंचायत अधिकारीचे माध्यमातून उपलब्ध सेवा</h2>
           <div className="services-grid">
             <div className="service-card">
               <h3>जन्म प्रमाणपत्र</h3>

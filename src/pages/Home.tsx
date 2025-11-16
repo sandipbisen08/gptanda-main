@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FaTools, FaEnvelope, FaBullhorn, FaUsers } from 'react-icons/fa';
+import { FaTools, FaEnvelope, FaBullhorn, FaUsers, FaIdCard } from 'react-icons/fa';
 import SEO from '../components/SEO';
 import Marquee from '../components/Marquee';
 import './Home.scss';
+import { members as sharedMembers, Member } from '../data/members';
 import gp1 from '../images/gptanda.jpg';
 import gp2 from '../images/gp2.jpg';
 import gp3 from '../images/gp3.jpg';
@@ -343,6 +344,29 @@ const Home: React.FC = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Executive Committee Section */}
+      <section className="exec-committee">
+        <div className="container">
+          <div className="panel">
+            <h2>ग्रामपंचायत कार्यकारणी मंडळ</h2>
+            <div className="diamond" />
+            <ul className="member-grid">
+              {sharedMembers.map((m: Member) => (
+                <li key={m.id} className="member-item">
+                  <div className="icon" aria-hidden>
+                    <FaIdCard />
+                  </div>
+                  <div className="info">
+                    <div className="name">{m.name}</div>
+                    <div className="role">{m.role}</div>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>

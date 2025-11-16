@@ -60,7 +60,7 @@
   - Key initiatives (4 items)
 - **SEO:** Person schema, unique meta tags
 
-#### Page 3: ग्रामसेवक (Gramsevak)
+#### Page 3: ग्रा.पं.अधिकारी (Gramsevak)
 - **Route:** `/gramsevak`
 - **Content:** प्रशासकीय अधिकारी की जानकारी
 - **Sections:**

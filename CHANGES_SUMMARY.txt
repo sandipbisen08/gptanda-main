@@ -267,9 +267,9 @@ PAGES WITH SEO OPTIMIZATION
    - Keywords: उपसरपंच, उप गाव प्रमुख, तांडा, ग्रामपंचायत
 
 7. Gramsevak Page (/gramsevak)
-   - Title: ग्रामसेवक | तांडा ग्रामपंचायत
+   - Title: ग्रा.पं.अधिकारी | तांडा ग्रामपंचायत
    - Schema: Person
-   - Keywords: ग्रामसेवक, गाव प्रशासकीय अधिकारी, तांडा, ग्रामपंचायत
+   - Keywords: ग्रा.पं.अधिकारी, गाव प्रशासकीय अधिकारी, तांडा, ग्रामपंचायत
 
 8. Adhyaksha Page (/adhyaksha)
    - Title: अध्यक्ष | तांडा ग्रामपंचायत

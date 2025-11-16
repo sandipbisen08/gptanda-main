@@ -19,6 +19,8 @@
     padding: 2px;
   }
 
+ 
+
   .govt-text {
     font-size: 1.45rem;
     font-weight: 800;
@@ -793,6 +795,55 @@
         margin: 0;
       }
     }
+  }
+}
+
+// Executive Committee Section (root-level)
+.exec-committee {
+  padding: 40px 20px 80px;
+  background-image: url("../images/bg1.jpg");
+  background-size: cover;
+  background-position: center;
+
+  .panel {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 24px 24px 28px;
+    box-shadow: 0 8px 24px rgba(2, 6, 23, 0.06);
+  }
+
+  .panel h2 { text-align: center; color: var(--accent-color); }
+  .diamond { width: 14px; height: 14px; background: #16a34a; margin: 10px auto 22px; transform: rotate(45deg); border-radius: 3px; }
+
+  .member-grid {
+    list-style: none; padding: 0; margin: 0;
+    display: grid; gap: 18px; grid-template-columns: repeat(4, 1fr);
+
+    @media (max-width: 1200px) { grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 992px) { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 560px) { grid-template-columns: 1fr; }
+  }
+
+  .member-item {
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px 16px; border: 1px solid #e8edf3; border-radius: 16px; background: #fff;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04); min-height: 72px;
+    transition: box-shadow .2s ease, transform .2s ease, border-color .2s ease;
+  }
+
+  .member-item .icon {
+    display: inline-flex; align-items: center; justify-content: center;
+    color: #fff; background: #16a34a; width: 44px; height: 34px; border-radius: 8px;
+    font-size: 20px;
+  }
+  .member-item .name { font-weight: 800; color: var(--accent-color); letter-spacing: 0.1px; }
+  .member-item .role { color: var(--gray-color); font-size: 0.88rem; margin-top: 2px; }
+
+  .member-item:hover {
+    border-color: #d9e2ec;
+    box-shadow: 0 6px 18px rgba(2, 6, 23, 0.08);
+    transform: translateY(-2px);
   }
 }
 

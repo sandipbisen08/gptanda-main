@@ -1,0 +1,85 @@
+.feedback {
+  .page-hero {
+    background: linear-gradient(135deg, #1a5f7a 0%, #159895 100%);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    margin-top: 80px;
+  }
+
+  .page-hero h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+  }
+
+  .hero .subtitle {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .breadcrumb-bar {
+    background: #f5f7f9;
+    border-bottom: 1px solid var(--border-color);
+    padding: 10px 0;
+  }
+
+  .breadcrumb {
+    display: flex;
+    gap: 8px;
+    color: var(--gray-color);
+  }
+
+  .breadcrumb a {
+    color: var(--accent-color);
+    font-weight: 600;
+  }
+
+  .content {
+    margin: 24px 0 48px;
+  }
+
+  .form-card {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+
+  label {
+    color: var(--accent-color);
+    font-weight: 600;
+  }
+
+  input,
+  textarea {
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-family: inherit;
+  }
+
+  .btn {
+    margin-top: 6px;
+    padding: 10px 16px;
+    background: var(--primary-color);
+    color: #fff;
+    border: 0;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+}

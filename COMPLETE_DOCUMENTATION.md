@@ -303,7 +303,7 @@ const MyPage: React.FC = () => {
 नेतृत्व (Leadership) ▼
   ├── सरपंच (Sarpanch)
   ├── उपसरपंच (Upsarpanch)
-  ├── ग्रामसेवक (Gramsevak)
+  ├── ग्रा.पं.अधिकारी (Gramsevak)
   └── अध्यक्ष (Adhyaksha)
 संपर्क (Contact)
 ```

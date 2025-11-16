@@ -52,8 +52,33 @@ const Navbar: React.FC = () => {
             </Link>
           </li>
           <li className="nav-item">
+            <Link to="/schemes" className={`nav-links ${isActive('/schemes') ? 'active' : ''}`} onClick={toggleMenu}>
+              योजना
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/overview" className={`nav-links ${isActive('/overview') ? 'active' : ''}`} onClick={toggleMenu}>
+              संक्षिप्त माहिती
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/projects" className={`nav-links ${isActive('/projects') ? 'active' : ''}`} onClick={toggleMenu}>
+              ग्रामविकास प्रकल्प
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/feedback" className={`nav-links ${isActive('/feedback') ? 'active' : ''}`} onClick={toggleMenu}>
+              तक्रार आणि सूचना
+            </Link>
+          </li>
+          <li className="nav-item">
             <Link to="/gallery" className={`nav-links ${isActive('/gallery') ? 'active' : ''}`} onClick={toggleMenu}>
               गॅलरी
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/ahwal" className={`nav-links ${isActive('/ahwal') ? 'active' : ''}`} onClick={toggleMenu}>
+              अहवाल
             </Link>
           </li>
           <li className="nav-item dropdown">
@@ -83,8 +108,7 @@ const Navbar: React.FC = () => {
                   toggleMenu();
                   setIsDropdownOpen(false);
                 }}>
-                  ग्रामसेवक
-                </Link>
+                  ग्रा.पं.अधिकारी                </Link>
               </li>
               <li>
                 <Link to="/adhyaksha" className={`dropdown-link ${isActive('/adhyaksha') ? 'active' : ''}`} onClick={() => {
@@ -92,6 +116,14 @@ const Navbar: React.FC = () => {
                   setIsDropdownOpen(false);
                 }}>
                   अध्यक्ष
+                </Link>
+              </li>
+              <li>
+                <Link to="/members" className={`dropdown-link ${isActive('/members') ? 'active' : ''}`} onClick={() => {
+                  toggleMenu();
+                  setIsDropdownOpen(false);
+                }}>
+                  सदस्य
                 </Link>
               </li>
             </ul>
