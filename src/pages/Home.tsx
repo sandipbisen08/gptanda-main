@@ -15,6 +15,7 @@ import gp7 from '../images/gp7.jpg';
 import gp8 from '../images/gp8.jpg';
 import gp9 from '../images/gp9.jpg';
 import gp10 from '../images/gp10.jpg';
+import herobg from '../images/herobg.jpg';
 import gptanda from '../images/gptanda.jpg';
 import new1 from '../images/new1.jpg';
 import new2 from '../images/new2.jpg';
@@ -50,7 +51,7 @@ const Home: React.FC = () => {
   };
 
   // Hero background slider
-  const heroImages = [gp1, gp2, gp3, gp4, gp5, gp6, gp7, gp8, gp9, gp10, gptanda];
+  const heroImages = [herobg];
   const [heroIdx, setHeroIdx] = useState(0);
   const [autoPlay] = useState(true);
 
