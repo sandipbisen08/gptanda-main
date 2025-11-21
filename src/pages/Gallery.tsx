@@ -17,21 +17,21 @@ import gpb4 from '../images/gpb4.jpg';
 import gpb5 from '../images/gpb5.jpg';
 const Gallery: React.FC = () => {
     const images = [
-        { src: gp1, title: 'चित्र 1' },
-        { src: gp2, title: 'चित्र 2' },
-        { src: gp3, title: 'चित्र 3' },
-        { src: gp4, title: 'चित्र 4' },
-        { src: gp5, title: 'चित्र 5' },
-        { src: gp6, title: 'चित्र 6' },
-        { src: gp7, title: 'चित्र 7' },
-        { src: gp8, title: 'चित्र 8' },
-        { src: gp9, title: 'चित्र 9' },
-        { src: gp10, title: 'चित्र 10' },
-        { src: gpb2, title: 'चित्र 11' },
-        { src: gpb3, title: 'चित्र 12' },
-        { src: gpb4, title: 'चित्र 13' },
-        { src: gpb5, title: 'चित्र 14' },
-    ];
+    { src: gp1, title: 'चित्र 1', desc: 'मुख्यमंत्री समृद्ध  पंचायतराज अभियान अंतर्गत ग्राम तांडा येथे जिल्हा परिषद शाळेतील प्रथम व द्वितीय  क्रमांक आलेल्या विद्यार्थ्यांना तसेच गावातील शासकीय सेवेत लागलेल्या मुला मुलींचे ग्रामपंचायत मार्फत शाल, श्रीफळ, व शील्ड देऊन विद्यार्थ्यांचा सत्कार करण्यात आला' },
+    { src: gp2, title: 'चित्र 2', desc: 'मुख्यमंत्री पंचायत राज अभियान अंतर्गत लोक वरगनी करतांनी घेण्यात आलेले छायाचित्र' },
+    { src: gp3, title: 'चित्र 3', desc: 'चित्र 3 साठी वेगळे वर्णन' },
+    { src: gp4, title: 'चित्र 4', desc: 'मुख्यमंत्री समृद्ध पंचायतराज अभियान अंतर्गत ग्रामपंचायत तांडा येथे संपूर्ण गावात, चौकात, रस्त्याच्या मुख्य रस्त्यावर, सार्वजनिक ठिकाणी, सौर उर्जेवर आधारित सी.सी.टीव्ही कॅमेरे लावण्यात आले' },
+    { src: gp5, title: 'चित्र 5', desc: 'चित्र 5 साठी वेगळे वर्णन' },
+    { src: gp6, title: 'चित्र 6', desc: 'मुख्यमंत्री समृद्ध पंचायतराज अभियान अंतर्गत ग्राम तांडा येथे अभियान सुरुवातीपासून दर आठवड्याला स्वच्छता अभियान राबविण्यात येते' },
+    { src: gp7, title: 'चित्र 7', desc: 'चित्र 7 साठी वेगळे वर्णन' },
+    { src: gp8, title: 'चित्र 8', desc: 'मुख्यमंत्री समृद्ध पंचायतराज अभियान अंतर्गत नाविन्यपूर्ण उपक्रम अंतर्गत ग्राम तांडा येथे कृत्रिम विसर्जन तलाव तयार करून गणेश जी मूर्ती विसर्जन करण्यात आली' },
+    { src: gp9, title: 'चित्र 9', desc: 'दिनांक 20/11/2025ला शुद्ध पिण्याच्या पाण्याचा पुरवठा करिता गावकरी ग्रामस्थांना पिण्याच्या पाण्याची  कॅन वाटप   करण्यात आली' },
+    { src: gp10, title: 'चित्र 10', desc: 'चित्र 10 साठी वेगळे वर्णन' },
+    { src: gpb2, title: 'चित्र 11', desc: 'चित्र 11 साठी वेगळे वर्णन' },
+    { src: gpb3, title: 'चित्र 12', desc: 'चित्र 12 साठी वेगळे वर्णन' },
+    { src: gpb4, title: 'चित्र 13', desc: 'दिनांक 20/11/2025ला मुख्यमंत्री समृद्ध पंचायत राज अभियान अंतर्गत ग्रामपंचायत तांडा येथे महिलांकरिता ॲनिमिया टेस्ट अभियान मोहीम राबविण्यात आली .' },
+    { src: gpb5, title: 'चित्र 14', desc: 'चित्र 14 साठी वेगळे वर्णन' },
+];
 
     const [current, setCurrent] = useState(0);
     const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -73,25 +73,31 @@ const Gallery: React.FC = () => {
                     </div>
 
                     <div className="thumbnails">
-                        {images.map((img, idx) => (
-                            <button
-                                key={idx}
-                                className={`thumb ${idx === current ? 'active' : ''}`}
-                                onClick={() => { setCurrent(idx); setLightboxOpen(true); }}
-                                onContextMenu={preventImgActions}
-                                aria-label={`Open ${img.title}`}
-                            >
-                                <img
-                                    src={img.src}
-                                    alt={img.title}
-                                    className="no-download"
-                                    draggable={false}
-                                    onContextMenu={preventImgActions}
-                                    onDragStart={preventImgActions}
-                                />
-                            </button>
-                        ))}
-                    </div>
+    {images.map((img, idx) => (
+        <button
+            key={idx}
+            className={`thumb ${idx === current ? 'active' : ''}`}
+            onClick={() => { setCurrent(idx); setLightboxOpen(true); }}
+            onContextMenu={preventImgActions}
+            aria-label={`Open ${img.title}`}
+        >
+            <img
+                src={img.src}
+                alt={img.title}
+                className="no-download"
+                draggable={false}
+                onContextMenu={preventImgActions}
+                onDragStart={preventImgActions}
+            />
+            <div className="thumb-caption">
+                <div className="thumb-title">{img.title}</div>
+                {img.desc && (
+                    <div className="thumb-desc">{img.desc}</div>
+                )}
+            </div>
+        </button>
+    ))}
+</div>
                 </div>
             </section>
 

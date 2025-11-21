@@ -125,6 +125,8 @@
         box-shadow: 0 6px 20px rgba(2, 6, 23, 0.08);
         width: 100%;
         display: block;
+        background-color: #ffb850;
+        padding: 8px;
 
         img {
           width: 100%;
@@ -142,6 +144,8 @@
         &.active {
           outline: 3px solid rgba(14, 159, 110, 0.9);
           transform: translateY(-4px);
+          // background-color: chartreuse;
+          
         }
       }
     }
@@ -235,3 +239,18 @@
 //         height: 60px;
 //     }
 // }
+.thumb-caption {
+    margin-top: 4px;
+    text-align: center;
+    // background-color: chartreuse;
+}
+
+.thumb-title {
+    font-weight: 600;
+}
+
+.thumb-desc {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #555;
+}
