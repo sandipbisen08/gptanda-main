@@ -23,6 +23,9 @@ const SEO: React.FC<SEOProps> = ({
   canonicalUrl,
   structuredData,
 }) => {
+  const defaultKeywords = 'तांडा, ग्रामपंचायत, गोंदिया, महाराष्ट्र, सरपंच, ग्रामीण विकास, सेवा, Tanda, Grampanchayat, Gondia, village, rural development, government services, schemes,gptandagondia,tanda grampanchayat, tanda gondia, tanda village, grampanchayat tanda';
+  const finalKeywords = keywords && keywords.trim() !== '' ? keywords : defaultKeywords;
+
   useEffect(() => {
     // Update title
     document.title = title;
@@ -36,16 +39,14 @@ const SEO: React.FC<SEOProps> = ({
     }
     metaDescription.setAttribute('content', description);
 
-    // Update keywords
-    if (keywords) {
-      let metaKeywords = document.querySelector('meta[name="keywords"]');
-      if (!metaKeywords) {
-        metaKeywords = document.createElement('meta');
-        metaKeywords.setAttribute('name', 'keywords');
-        document.head.appendChild(metaKeywords);
-      }
-      metaKeywords.setAttribute('content', keywords);
+    // Update keywords (use provided or defaults)
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
     }
+    metaKeywords.setAttribute('content', finalKeywords);
 
     // Update Open Graph tags
     if (ogTitle) {
