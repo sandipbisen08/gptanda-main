@@ -36,7 +36,7 @@ const Gramsevak: React.FC = () => {
         keywords="ग्रामपंचायत अधिकारी, गाव प्रशासकीय अधिकारी, तांडा, ग्रामपंचायत, गोंदिया"
         ogTitle="ग्रामपंचायत अधिकारी | तांडा ग्रामपंचायत"
         ogDescription="तांडा ग्रामपंचायतचे ग्रामपंचायत अधिकारी यांचे संपर्क आणि जिम्मेदारी।"
-        canonicalUrl="https://tandgrampanchayat.gov.in/gramsevak"
+        canonicalUrl="https://gptandagondia.org.in/gramsevak"
         structuredData={structuredData}
       />
 
@@ -91,7 +91,7 @@ const Gramsevak: React.FC = () => {
                   <FaEnvelope className="icon" />
                   <div>
                     <p className="label">ईमेल</p>
-                    <p className="value">gramsevak@tandgrampanchayat.gov.in</p>
+                    <p className="value">gramsevak@gptandagondia.org.in</p>
                   </div>
                 </div>
                 <div className="contact-item">

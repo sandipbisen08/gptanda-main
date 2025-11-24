@@ -549,7 +549,7 @@ This project is created for तांडा ग्रामपंचायत (T
 
 **Project:** तांडा ग्रामपंचायत
 **Location:** Tanda, Gondia, Gondia, Maharashtra 441601
-**Website:** https://tandgrampanchayat.gov.in (To be updated)
+**Website:** https://gptandagondia.org.in (To be updated)
 
 ---
 

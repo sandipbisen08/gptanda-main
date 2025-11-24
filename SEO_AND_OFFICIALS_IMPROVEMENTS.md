@@ -25,7 +25,7 @@
   keywords="कीवर्ड1, कीवर्ड2"
   ogTitle="OG शीर्षक"
   ogDescription="OG विवरण"
-  canonicalUrl="https://tandgrampanchayat.gov.in/page"
+  canonicalUrl="https://gptandagondia.org.in/page"
   structuredData={schemaData}
 />
 ```
@@ -297,7 +297,7 @@ public/
 
 सभी आधिकारिक pages पर निम्नलिखित को अपडेट करें:
 - **फोन:** +91-XXXXXXXXXX
-- **ईमेल:** contact@tandgrampanchayat.gov.in
+- **ईमेल:** contact@gptandagondia.org.in
 - **पता:** ग्रामपंचायत कार्यालय, तांडा, गोंदिया, गोंदिया, महाराष्ट्र 441601
 
 ---

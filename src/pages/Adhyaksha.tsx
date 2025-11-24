@@ -31,7 +31,7 @@ const Adhyaksha: React.FC = () => {
         keywords="अध्यक्ष, चेअरमन, तांडा, ग्रामपंचायत, गोंदिया"
         ogTitle="अध्यक्ष | तांडा ग्रामपंचायत"
         ogDescription="तांडा ग्रामपंचायतचे अध्यक्ष यांचे संपर्क आणि जिम्मेदारी।"
-        canonicalUrl="https://tandgrampanchayat.gov.in/adhyaksha"
+        canonicalUrl="https://gptandagondia.org.in/adhyaksha"
         structuredData={structuredData}
       />
 
@@ -77,7 +77,7 @@ const Adhyaksha: React.FC = () => {
                   <FaEnvelope className="icon" />
                   <div>
                     <p className="label">ईमेल</p>
-                    <p className="value">adhyaksha@tandgrampanchayat.gov.in</p>
+                    <p className="value">adhyaksha@gptandagondia.org.in</p>
                   </div>
                 </div>
                 <div className="contact-item">

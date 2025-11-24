@@ -109,7 +109,7 @@ const Home: React.FC = () => {
         keywords="तांडा, ग्रामपंचायत, गोंदिया, महाराष्ट्र, गोंदिया, सरपंच, ग्रामीण विकास, सेवा"
         ogTitle="तांडा ग्रामपंचायत | Tanda Grampanchayat"
         ogDescription="तांडा ग्रामपंचायत - आधिकारिक ग्रामपंचायत वेबसाइट"
-        canonicalUrl="https://tandgrampanchayat.gov.in"
+        canonicalUrl="https://gptandagondia.org.in"
         structuredData={structuredData}
       />
       {/* Hero Section with animated slider and text */}

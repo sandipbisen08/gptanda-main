@@ -9,7 +9,7 @@ const Services: React.FC = () => {
     '@type': 'LocalBusiness',
     name: 'Tanda Grampanchayat Services',
     description: 'तांडा ग्रामपंचायतचे विविध सेवा - रस्ते, पाणी, कृषी, शिक्षा, आरोग्य आणि सामाजिक कल्याण।',
-    url: 'https://tandgrampanchayat.gov.in/services'
+    url: 'https://gptandagondia.org.in/services'
   };
   const services = [
     {
@@ -62,7 +62,7 @@ const Services: React.FC = () => {
         keywords="सेवा, ग्रामीण विकास, तांडा, ग्रामपंचायत, रस्ते, पाणी, कृषी, शिक्षा, आरोग्य"
         ogTitle="सेवा | तांडा ग्रामपंचायत"
         ogDescription="तांडा ग्रामपंचायतचे विविध सेवा आणि कार्यक्रम।"
-        canonicalUrl="https://tandgrampanchayat.gov.in/services"
+        canonicalUrl="https://gptandagondia.org.in/services"
         structuredData={structuredData}
       />
       {/* Hero Section */}

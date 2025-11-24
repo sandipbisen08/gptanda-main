@@ -214,7 +214,7 @@ mkdir -p public/images
 ### Environment Variables (if needed)
 ```bash
 # Create .env file
-REACT_APP_SITE_URL=https://tandgrampanchayat.gov.in
+REACT_APP_SITE_URL=https://gptandagondia.org.in
 REACT_APP_GA_ID=your-google-analytics-id
 ```
 

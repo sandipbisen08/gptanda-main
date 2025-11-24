@@ -9,7 +9,7 @@ const About: React.FC = () => {
     '@type': 'Organization',
     name: 'Tanda Grampanchayat',
     description: 'तांडा ग्रामपंचायत - गोंदिया जिल्ह्यातील गोंदिया तालुक्यातील आधिकारिक ग्रामपंचायत',
-    url: 'https://tandgrampanchayat.gov.in',
+    url: 'https://gptandagondia.org.in',
     foundingDate: '1950',
     address: {
       '@type': 'PostalAddress',
@@ -29,7 +29,7 @@ const About: React.FC = () => {
         keywords="तांडा, ग्रामपंचायत, इतिहास, उद्दिष्ट, दृष्टिकोन, नेतृत्व, ग्रामीण विकास"
         ogTitle="आमच्याबद्दल | तांडा ग्रामपंचायत"
         ogDescription="तांडा ग्रामपंचायतचा इतिहास, उद्दिष्ट आणि नेतृत्व।"
-        canonicalUrl="https://tandgrampanchayat.gov.in/about"
+        canonicalUrl="https://gptandagondia.org.in/about"
         structuredData={structuredData}
       />
       {/* Hero Section */}

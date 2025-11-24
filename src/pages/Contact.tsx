@@ -9,7 +9,7 @@ const Contact: React.FC = () => {
     '@type': 'LocalBusiness',
     name: 'Tanda Grampanchayat',
     description: 'तांडा ग्रामपंचायत - संपर्क माहिती',
-    url: 'https://tandgrampanchayat.gov.in/contact',
+    url: 'https://gptandagondia.org.in/contact',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Tanda',
@@ -22,7 +22,7 @@ const Contact: React.FC = () => {
       '@type': 'ContactPoint',
       contactType: 'Customer Service',
       telephone: '+91-XXXXXXXXXX',
-      email: 'contact@tandgrampanchayat.gov.in'
+      email: 'contact@gptandagondia.org.in'
     }
   };
   const [formData, setFormData] = useState({
@@ -66,7 +66,7 @@ const Contact: React.FC = () => {
         keywords="संपर्क, तांडा, ग्रामपंचायत, फोन, ईमेल, पत्ता, कार्यालय वेळ"
         ogTitle="संपर्क साधा | तांडा ग्रामपंचायत"
         ogDescription="तांडा ग्रामपंचायतशी संपर्क साधण्यासाठी संपर्क माहिती।"
-        canonicalUrl="https://tandgrampanchayat.gov.in/contact"
+        canonicalUrl="https://gptandagondia.org.in/contact"
         structuredData={structuredData}
       />
       {/* Hero Section */}

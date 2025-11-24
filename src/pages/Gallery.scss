@@ -125,7 +125,7 @@
         box-shadow: 0 6px 20px rgba(2, 6, 23, 0.08);
         width: 100%;
         display: block;
-        background-color: #ffb850;
+        background-color: #faefdf;
         padding: 8px;
 
         img {
@@ -133,6 +133,7 @@
           height: 200px;
           object-fit: cover;
           display: block;
+          border-radius: 10px;
         }
         @media (max-width: 900px) {
           img { height: 160px; }
@@ -252,5 +253,5 @@
 .thumb-desc {
     font-size: 0.85rem;
     font-weight: bold;
-    color: #555;
+    color: #000;
 }

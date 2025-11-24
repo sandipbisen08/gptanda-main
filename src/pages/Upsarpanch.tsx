@@ -36,7 +36,7 @@ const Upsarpanch: React.FC = () => {
         keywords="उपसरपंच, उप गाव प्रमुख, तांडा, ग्रामपंचायत, गोंदिया"
         ogTitle="उपसरपंच | तांडा ग्रामपंचायत"
         ogDescription="तांडा ग्रामपंचायतचे उपसरपंच (उप-गाव प्रमुख) यांचे संपर्क आणि जिम्मेदारी।"
-        canonicalUrl="https://tandgrampanchayat.gov.in/upsarpanch"
+        canonicalUrl="https://gptandagondia.org.in/upsarpanch"
         structuredData={structuredData}
       />
 
@@ -91,7 +91,7 @@ const Upsarpanch: React.FC = () => {
                   <FaEnvelope className="icon" />
                   <div>
                     <p className="label">ईमेल</p>
-                    <p className="value">upsarpanch@tandgrampanchayat.gov.in</p>
+                    <p className="value">upsarpanch@gptandagondia.org.in</p>
                   </div>
                 </div>
                 <div className="contact-item">
