@@ -1,6 +1,79 @@
 .officials-page {
+  position: relative;
+  min-height: 100vh;
+  // /* Tricolor background (muted): saffron (top), white (middle), green (bottom)
+  background: linear-gradient(180deg, rgba(249, 115, 22, 0.14) 0%, rgb(249 115 22 / 47%) 34%, rgba(255, 255, 255, 0.92) 34%, rgba(255, 255, 255, 0.92) 66%, rgb(22 163 74 / 48%) 66%, rgba(22, 163, 74, 0.1) 100%);
+  background-attachment: fixed;
+
+  /* subtle texture overlay for depth */
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* very subtle texture */
+    background-image: radial-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+    background-size: 80px 80px;
+    pointer-events: none;
+    z-index: 0;
+    mix-blend-mode: overlay;
+    opacity: 0.9;
+  }
+
+  /* place hero above background */
+  >.page-hero {
+    z-index: 1;
+  }
+
+  /* decorative wave between hero (saffron) and content (white) */
+  .page-hero::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    /* overlap slightly */
+    height: 140px;
+    z-index: 1;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'><path d='M0,40 C150,120 350,0 600,40 C850,80 1050,40 1200,70 L1200,120 L0,120 Z' fill='%23ffffff'/></svg>");
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: translateY(0);
+  }
+
+  /* small upward wave near bottom to blend white -> green */
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(66% - 70px);
+    height: 140px;
+    z-index: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'><path d='M0,80 C150,0 350,120 600,80 C850,40 1050,80 1200,50 L1200,0 L0,0 Z' fill='%23ffffff' opacity='0.95'/></svg>");
+    background-size: cover;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    transform: translateY(0);
+  }
+
+  /* ensure text and content sit above decorative layers */
+  .container,
+  .hero-content,
+  .official-profile,
+  .responsibilities,
+  .services-provided,
+  .office-hours {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* make sure forms and cards remain readable on top of tricolor
+     by keeping their existing white backgrounds; add slight translucency
+     if you want them to blend more with the background. */
+
+
   .page-hero {
-    background: linear-gradient(135deg, #1a5f7a 0%, #2a7f9a 100%);
+    // background: linear-gradient(135deg, #1a5f7a 0%, #2a7f9a 100%);
     color: white;
     padding: 80px 20px;
     text-align: center;

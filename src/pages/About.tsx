@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { FaBullseye, FaEye, FaHeart } from 'react-icons/fa';
 import SEO from '../components/SEO';
 import './About.scss';
@@ -19,6 +19,84 @@ const About: React.FC = () => {
       postalCode: '441601',
       addressCountry: 'IN'
     }
+  };
+
+  // Helper: convert Western digits to Devanagari digits for Marathi display
+  const toDevanagari = (input: string) => {
+    const map: Record<string, string> = {
+      '0': '०', '1': '१', '2': '२', '3': '३', '4': '४',
+      '5': '५', '6': '६', '7': '७', '8': '८', '9': '९'
+    };
+    return input.replace(/\d/g, d => map[d] || d);
+  };
+
+  const formatNumberForDisplay = (num: number) => {
+    // format with Indian grouping, then convert digits
+    const formatted = new Intl.NumberFormat('en-IN').format(Math.round(num));
+    return toDevanagari(formatted);
+  };
+
+  // AnimatedStat: shows an animated counter that starts when visible
+  const AnimatedStat: React.FC<{ label: string; value: number; format?: 'number' | 'percent' }> = ({ label, value, format = 'number' }) => {
+    const [count, setCount] = useState(0);
+    const elRef = useRef<HTMLDivElement | null>(null);
+    const rafRef = useRef<number | null>(null);
+
+    useEffect(() => {
+      let observer: IntersectionObserver | null = null;
+      const node = elRef.current;
+      if (!node || typeof IntersectionObserver === 'undefined') return;
+
+      const startAnimation = () => {
+        const start = performance.now();
+        const duration = format === 'percent' ? 900 : 1400;
+        const from = 0;
+        const to = value;
+
+        const step = (now: number) => {
+          const progress = Math.min((now - start) / duration, 1);
+          // easeOutCubic
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = from + (to - from) * eased;
+          setCount(Math.round(current));
+          if (progress < 1) {
+            rafRef.current = requestAnimationFrame(step);
+          }
+        };
+
+        rafRef.current = requestAnimationFrame(step);
+      };
+
+      observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.25) {
+            // start once and disconnect
+            startAnimation();
+            if (observer && node) {
+              observer.unobserve(node);
+            }
+          }
+        });
+      }, { threshold: [0, 0.25, 0.5] });
+
+      observer.observe(node);
+
+      return () => {
+        if (observer && node) observer.unobserve(node);
+        if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      };
+    }, [value, format]);
+
+    return (
+      <div className="stat-card" ref={elRef}>
+        <h3>
+          {format === 'percent'
+            ? `${toDevanagari(String(count))}%`
+            : formatNumberForDisplay(count)}
+        </h3>
+        <p>{label}</p>
+      </div>
+    );
   };
 
   return (
@@ -96,22 +174,11 @@ const About: React.FC = () => {
           <div className="statistics">
             <h2>आमच्या गावाचे आंकडे</h2>
             <div className="stats-grid">
-              <div className="stat-card">
-                <h3>~२७८२</h3>
-                <p>एकूण लोकसंख्या</p>
-              </div>
-              <div className="stat-card">
-                <h3>~१२००</h3>
-                <p>घरे</p>
-              </div>
-              <div className="stat-card">
-                <h3>~८५%</h3>
-                <p>साक्षरता दर</p>
-              </div>
-              <div className="stat-card">
-                <h3>~७०%</h3>
-                <p>कृषी व्यवसाय</p>
-              </div>
+              {/* Counters will animate when this section scrolls into view */}
+              <AnimatedStat label="एकूण लोकसंख्या" value={2782} format="number" />
+              <AnimatedStat label="घरे" value={1200} format="number" />
+              <AnimatedStat label="साक्षरता दर" value={85} format="percent" />
+              <AnimatedStat label="कृषी व्यवसाय" value={70} format="percent" />
             </div>
           </div>
 
