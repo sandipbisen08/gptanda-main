@@ -1,9 +1,36 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import './About.scss';
 
 const TermsAndConditions: React.FC = () => {
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Tanda Grampanchayat',
+    description:
+      'तांडा ग्रामपंचायत - गोंदिया जिल्ह्यातील गोंदिया तालुक्यातील आधिकारिक ग्रामपंचायत',
+    url: 'https://gptandagondia.org.in',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Tanda',
+      addressLocality: 'Gondia',
+      addressRegion: 'Gondia',
+      postalCode: '441601',
+      addressCountry: 'IN',
+    },
+  };
+
   return (
     <div className="about-page">
+      <SEO
+        title="अटी व शर्ती | तांडा ग्रामपंचायत"
+        description="तांडा ग्रामपंचायतच्या अधिकृत वेबसाइटच्या वापरासंबंधी अटी व शर्ती – माहितीची अचूकता, जबाबदारीची मर्यादा, कॉपीराइट आणि इतर कायदेशीर बाबी."
+        keywords="अटी व शर्ती, Terms and Conditions, तांडा ग्रामपंचायत वेबसाइट नियम, Disclaimer"
+        ogTitle="अटी व शर्ती | तांडा ग्रामपंचायत"
+        ogDescription="तांडा ग्रामपंचायत वेबसाइटच्या वापरासंबंधी अटी व जबाबदारीची मर्यादा."
+        canonicalUrl="https://gptandagondia.org.in/terms-and-conditions"
+        structuredData={structuredData}
+      />
       <div className="about-container">
         <h1>अटी व शर्ती</h1>
 

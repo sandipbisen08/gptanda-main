@@ -16,8 +16,14 @@ const Footer: React.FC = () => {
           <h4>द्रुत लिंक</h4>
           <ul>
             <li><Link to="/">मुख्यपृष्ठ</Link></li>
-            <li><Link to="/about">आमच्याबद्दल</Link></li>
+            {/* <li><Link to="/about">आमच्याबद्दल</Link></li>
             <li><Link to="/services">सेवा</Link></li>
+            <li><Link to="/schemes">योजना</Link></li>
+            <li><Link to="/projects">ग्रामविकास प्रकल्प</Link></li>
+            <li><Link to="/ahwal">अहवाल</Link></li>
+            <li><Link to="/gallery">गॅलरी</Link></li> */}
+            <li><Link to="/feedback">तक्रार आणि सूचना</Link></li>
+            <li><Link to="/rti">माहिती अधिकार (RTI)</Link></li>
             <li><Link to="/contact">संपर्क</Link></li>
             <li><Link to="/privacy-policy">गोपनीयता धोरण</Link></li>
             <li><Link to="/terms-and-conditions">अटी व शर्ती</Link></li>
@@ -36,6 +42,10 @@ const Footer: React.FC = () => {
       </div>
 
       <div className="footer-bottom">
+        <p className="disclaimer">
+          येथे दिलेली माहिती शक्य तितकी अचूक ठेवण्याचा प्रयत्न केला जातो. अधिकृत नोंदींसाठी
+          कृपया संबंधित शासकीय कार्यालयाशी संपर्क साधा.
+        </p>
         <p>&copy; {new Date().getFullYear()} तांडा ग्रामपंचायत. सर्व हक्क राखीव.</p>
       </div>
     </footer>

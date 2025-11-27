@@ -5,6 +5,11 @@
     padding: 100px 20px;
     text-align: center;
     margin-top: 80px;
+
+    @media (max-width: 768px) {
+      padding: 80px 16px;
+      margin-top: 70px;
+    }
   }
 
   .page-hero h1 {
@@ -17,7 +22,7 @@
     display: inline-block;
   }
 
-  .hero .subtitle {
+  .page-hero .subtitle {
     color: rgba(255, 255, 255, 0.9);
   }
 
@@ -40,16 +45,68 @@
 
   .content {
     margin: 24px 0 48px;
+
+    @media (max-width: 768px) {
+      margin: 20px 0 36px;
+    }
+  }
+
+  .feedback-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.3fr);
+    gap: 24px;
+    align-items: flex-start;
+
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+  }
+
+  .feedback-intro {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px 22px;
+    box-shadow: var(--box-shadow-soft, 0 2px 6px rgba(0, 0, 0, 0.06));
+
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+      color: var(--primary-color);
+    }
+
+    p {
+      margin-bottom: 0.75rem;
+      color: var(--gray-color);
+      line-height: 1.7;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.1rem;
+      list-style: disc;
+
+      li {
+        margin-bottom: 0.35rem;
+        color: var(--gray-color);
+        font-size: 0.95rem;
+      }
+    }
   }
 
   .form-card {
     background: #fff;
     border: 1px solid var(--border-color);
     border-radius: 10px;
-    padding: 20px;
+    padding: 20px 22px;
     box-shadow: var(--box-shadow);
-    max-width: 640px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+
+    @media (max-width: 768px) {
+      padding: 18px 16px;
+    }
   }
 
   .row {
@@ -57,6 +114,16 @@
     flex-direction: column;
     gap: 6px;
     margin-bottom: 12px;
+  }
+
+  .row-group {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   label {
@@ -70,6 +137,23 @@
     border: 1px solid var(--border-color);
     border-radius: 6px;
     font-family: inherit;
+    font-size: 0.98rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 2px rgba(21, 152, 149, 0.16);
+    }
+  }
+
+  select {
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.98rem;
+    background-color: #fff;
   }
 
   .btn {
@@ -81,5 +165,17 @@
     border-radius: 6px;
     font-weight: 700;
     cursor: pointer;
+    transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+
+    &:hover {
+      background: var(--accent-color);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: none;
+    }
   }
 }

@@ -1,9 +1,36 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import './About.scss';
 
 const PrivacyPolicy: React.FC = () => {
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Tanda Grampanchayat',
+    description:
+      'तांडा ग्रामपंचायत - गोंदिया जिल्ह्यातील गोंदिया तालुक्यातील आधिकारिक ग्रामपंचायत',
+    url: 'https://gptandagondia.org.in',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Tanda',
+      addressLocality: 'Gondia',
+      addressRegion: 'Gondia',
+      postalCode: '441601',
+      addressCountry: 'IN',
+    },
+  };
+
   return (
     <div className="about-page">
+      <SEO
+        title="गोपनीयता धोरण | तांडा ग्रामपंचायत"
+        description="तांडा ग्रामपंचायतच्या अधिकृत वेबसाइटवरील गोपनीयता धोरण – कोणती माहिती गोळा केली जाते, ती कशी वापरली जाते आणि सुरक्षा व कायदेशीर बाबींबद्दल सविस्तर माहिती."
+        keywords="गोपनीयता धोरण, Privacy Policy, तांडा ग्रामपंचायत, वेबसाइट गोपनीयता, डेटा सुरक्षा"
+        ogTitle="गोपनीयता धोरण | तांडा ग्रामपंचायत"
+        ogDescription="तांडा ग्रामपंचायतच्या वेबसाइटवरील वैयक्तिक माहितीच्या वापर आणि सुरक्षेबद्दल गोपनीयता धोरण."
+        canonicalUrl="https://gptandagondia.org.in/privacy-policy"
+        structuredData={structuredData}
+      />
       <div className="about-container">
         <h1>गोपनीयता धोरण</h1>
 

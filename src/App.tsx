@@ -19,6 +19,7 @@ import Projects from './pages/Projects';
 import Feedback from './pages/Feedback';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsAndConditions from './pages/TermsAndConditions';
+import RTI from './pages/RTI';
 import './App.scss';
 
 // Scroll to top on route change
@@ -54,6 +55,7 @@ const App: React.FC = () => {
           <Route path="/upsarpanch" element={<Upsarpanch />} />
           <Route path="/gramsevak" element={<Gramsevak />} />
           <Route path="/adhyaksha" element={<Adhyaksha />} />
+          <Route path="/rti" element={<RTI />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         </Routes>
