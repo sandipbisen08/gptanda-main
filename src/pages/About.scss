@@ -69,6 +69,74 @@
   }
 }
 
+// Generic legal/info pages (Privacy Policy, Terms & Conditions)
+.about-page {
+  padding: 100px 20px 80px;
+  margin-top: 80px;
+  background-color: #f7f7f7;
+
+  @media (max-width: 768px) {
+    padding: 80px 16px 60px;
+    margin-top: 70px;
+  }
+
+  .about-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 2.5rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+
+    @media (max-width: 768px) {
+      padding: 1.75rem 1.25rem;
+    }
+
+    h1 {
+      font-size: 2.1rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary-color);
+
+      @media (max-width: 768px) {
+        font-size: 1.8rem;
+        text-align: left;
+      }
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      color: var(--primary-color);
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--gray-color);
+      margin-bottom: 0.9rem;
+      text-align: justify;
+
+      @media (max-width: 768px) {
+        text-align: left;
+      }
+    }
+
+    ul {
+      margin: 0 0 1.2rem 1.3rem;
+      padding: 0;
+      list-style-type: disc;
+
+      li {
+        font-size: 0.98rem;
+        line-height: 1.7;
+        color: var(--gray-color);
+        margin-bottom: 0.4rem;
+      }
+    }
+  }
+}
+
 // Mission, Vision, Values Section
 .mvv-section {
   display: grid;

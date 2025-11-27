@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock } from 'react-icons/fa';
 import './Footer.scss';
 
@@ -14,10 +15,12 @@ const Footer: React.FC = () => {
         <div className="footer-section">
           <h4>द्रुत लिंक</h4>
           <ul>
-            <li><a href="/">मुख्यपृष्ठ</a></li>
-            <li><a href="/about">आमच्याबद्दल</a></li>
-            <li><a href="/services">सेवा</a></li>
-            <li><a href="/contact">संपर्क</a></li>
+            <li><Link to="/">मुख्यपृष्ठ</Link></li>
+            <li><Link to="/about">आमच्याबद्दल</Link></li>
+            <li><Link to="/services">सेवा</Link></li>
+            <li><Link to="/contact">संपर्क</Link></li>
+            <li><Link to="/privacy-policy">गोपनीयता धोरण</Link></li>
+            <li><Link to="/terms-and-conditions">अटी व शर्ती</Link></li>
           </ul>
         </div>
 
