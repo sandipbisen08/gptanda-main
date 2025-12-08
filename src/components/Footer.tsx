@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import './Footer.scss';
 
 const Footer: React.FC = () => {
@@ -10,6 +10,17 @@ const Footer: React.FC = () => {
         <div className="footer-section">
           <h3>तांडा ग्रामपंचायत</h3>
           <p>सर्वांसाठी, सर्वांच्या विकासासाठी</p>
+          <div className="footer-social-links">
+            <a href="https://www.facebook.com/people/%E0%A4%97%E0%A5%8D%E0%A4%B0%E0%A4%BE%E0%A4%AE-%E0%A4%AA%E0%A4%82%E0%A4%9A%E0%A4%BE%E0%A4%AF%E0%A4%A4-%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%B2%E0%A4%AF-%E0%A4%A4%E0%A4%BE%E0%A4%82%E0%A4%A1%E0%A4%BE/pfbid0mgMvGk46urvjAHs5B9TdwiXx3i1S3Y8h3ovkxxqRtpWxkCa6Sn8yzWt46t6Fx3Dgl/?rdid=nTH0CM7yrFjDOUSD&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1JFncGktyx%2F" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <FaFacebookF />
+            </a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <FaInstagram />
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <FaLinkedinIn />
+            </a>
+          </div>
         </div>
 
         <div className="footer-section">
