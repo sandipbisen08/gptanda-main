@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaFacebookF, FaInstagram } from 'react-icons/fa';
 import './Footer.scss';
 
 const Footer: React.FC = () => {
@@ -17,9 +17,9 @@ const Footer: React.FC = () => {
             <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <FaInstagram />
             </a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            {/* <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <FaLinkedinIn />
-            </a>
+            </a> */}
           </div>
         </div>
 
