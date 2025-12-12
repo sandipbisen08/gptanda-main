@@ -1,5 +1,7 @@
 .footer {
-  background: linear-gradient(135deg, #0F172A 0%, #0E9F6E 50%, #0F172A 100%);
+  // background: linear-gradient(135deg, #0F172A 0%, #0E9F6E 50%, #0F172A 100%);
+  // background: linear-gradient(135deg, #ff6e09 0%, #eea35e 45%, #0dbc27 100%);
+  background: linear-gradient(160deg, #ff6e09 40%, #eea35e 50%, #0dbc27 70%);
   // background-image: url("../images/bgfooter.jpg");
   background-size: cover;
   background-position: center;
@@ -89,7 +91,7 @@
 
     &:first-child {
       p {
-        font-size: 0.95rem;
+        font-size: 1.25rem;
         opacity: 0.9;
       }
     }
@@ -148,7 +150,8 @@
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     padding-top: 1.2rem;
     text-align: center;
-    color: rgba(255, 255, 255, 0.7);
+    // color: rgba(255, 255, 255, 0.7);
+    color: #ffffff;
     max-width: 1200px;
     margin: 0 auto;
 
@@ -174,7 +177,7 @@
       }
 
       ul li {
-        font-size: 0.95rem;
+        font-size: 1.1rem;
       }
     }
   }
