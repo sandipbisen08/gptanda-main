@@ -40,7 +40,7 @@ const Feedback: React.FC = () => {
           <p className="subtitle">आपल्या सूचना व तक्रारी आम्हांला सांगा</p>
         </div>
       </section>
-      <div className="breadcrumb-bar">
+      {/* <div className="breadcrumb-bar">
         <div className="container">
           <nav className="breadcrumb">
             <Link to="/">Home</Link>
@@ -48,7 +48,7 @@ const Feedback: React.FC = () => {
             <span>तक्रार आणि सूचना</span>
           </nav>
         </div>
-      </div>
+      </div> */}
 
       <section className="container content">
         <div className="feedback-layout">

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaFacebookF, FaInstagram } from 'react-icons/fa';
 import './Footer.scss';
+import footerimg3 from '../images/bgfooter2.jpg';
 
 const Footer: React.FC = () => {
   return (
@@ -20,6 +21,9 @@ const Footer: React.FC = () => {
             {/* <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <FaLinkedinIn />
             </a> */}
+          </div>
+          <div className='footer-chashma'>
+          <img src={footerimg3} alt="" />
           </div>
         </div>
 

@@ -1,7 +1,8 @@
 .footer {
-  background: linear-gradient(135deg, #0F172A 0%, #0E9F6E 50%, #0F172A 100%);
+  // background: linear-gradient(135deg, #0F172A 0%, #0E9F6E 50%, #0F172A 100%);
   // background: linear-gradient(135deg, #ff6e09 0%, #eea35e 45%, #0dbc27 100%);
   // background: linear-gradient(160deg, #ff6e09 40%, #eea35e 50%, #0dbc27 70%);
+  background: linear-gradient(135deg, #2f2203 0%, #011103 50%, #361305 100%);
   // background-image: url("../images/bgfooter.jpg");
   background-size: cover;
   background-position: center;
@@ -98,7 +99,7 @@
   }
 
   .footer-social-links {
-    margin-top: 0.9rem;
+    margin: 0.9rem;
     display: flex;
     align-items: center;
     gap: 0.8rem;
