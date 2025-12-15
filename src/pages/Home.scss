@@ -809,7 +809,7 @@
         }
 
         @media (max-width: 480px) {
-          min-height: 240px;
+          min-height: 204px;
         }
 
         video {
@@ -885,7 +885,7 @@
     min-width: 280px;
     width: 100%;
     max-width: 600px;
-    height: 350px;
+    height: 440px;
     scroll-snap-align: center;
 
     @media (max-width: 768px) {
@@ -1064,5 +1064,8 @@
   .announcement-video-full {
     max-height: 300px !important;
 
+  }
+  .announcement {
+    padding: 1.5rem !important;
   }
 }

@@ -140,6 +140,13 @@
           border-radius: 12px;
           border: 2px solid #ffffff;
         }
+
+        /* 11th thumbnail specific image fit */
+        &:nth-child(11) {
+          img {
+            object-fit: fill;
+          }
+        }
         @media (max-width: 900px) {
           img { height: 240px; }
         }
