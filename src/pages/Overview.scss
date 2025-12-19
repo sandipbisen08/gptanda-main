@@ -4,21 +4,22 @@
     // padding: 84px 0 90px;
     // text-align: center;
     // color: #fff;
-        background: linear-gradient(135deg, #1a5f7a 0%, #159895 100%);
+    background: linear-gradient(135deg, #1a5f7a 0%, #159895 100%);
     color: white;
     padding: 100px 20px;
     text-align: center;
     margin-top: 80px;
 
     h1 {
-    color: #fff;
-    font-size: 2.5rem;
-    font-weight: 800;
-    letter-spacing: 0.3px;
-    margin-bottom: 10px;
-    position: relative;
-    display: inline-block;
+      color: #fff;
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      margin-bottom: 10px;
+      position: relative;
+      display: inline-block;
     }
+
     h1::after {
       content: '';
       position: absolute;
@@ -28,16 +29,55 @@
       width: 64px;
       height: 3px;
       border-radius: 3px;
-      background: rgba(255,255,255,0.9);
+      background: rgba(255, 255, 255, 0.9);
     }
-    .subtitle { color: rgba(255,255,255,0.92); font-size: 1.05rem; margin-top: 18px; }
-  }
-  .breadcrumb-bar { background: #f5f7f9; border-bottom: 1px solid var(--border-color); padding: 10px 0; }
-  .breadcrumb { display: flex; gap: 8px; color: var(--gray-color); }
-  .breadcrumb a { color: var(--accent-color); font-weight: 600; }
 
-  .content { margin: 24px 0 48px; }
-  .grid { display: grid; gap: 16px; grid-template-columns: repeat(3, 1fr); }
-  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
-  .card { background: #fff; border: 1px solid var(--border-color); border-radius: 10px; padding: 16px; box-shadow: var(--box-shadow); }
+    .subtitle {
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 1.05rem;
+      margin-top: 18px;
+    }
+  }
+
+  .breadcrumb-bar {
+    background: #f5f7f9;
+    border-bottom: 1px solid var(--border-color);
+    padding: 10px 0;
+  }
+
+  .breadcrumb {
+    display: flex;
+    gap: 8px;
+    color: var(--gray-color);
+  }
+
+  .breadcrumb a {
+    color: var(--accent-color);
+    font-weight: 600;
+  }
+
+  .content {
+    margin: 24px 0 48px;
+    padding: 0 24px;
+  }
+
+  .grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 900px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .card {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: var(--box-shadow);
+  }
 }
