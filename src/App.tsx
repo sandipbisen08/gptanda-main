@@ -21,7 +21,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsAndConditions from './pages/TermsAndConditions';
 import RTI from './pages/RTI';
 import './App.scss';
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 
 // Scroll to top on route change
 const ScrollToTop: React.FC = () => {
