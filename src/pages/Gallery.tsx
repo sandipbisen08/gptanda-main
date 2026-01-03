@@ -25,6 +25,63 @@ import dec22 from '../images/dec22.jpeg';
 import dec26 from '../images/dec26.jpeg';
 import dec28 from '../images/dec28.jpeg';
 import dec31 from '../images/dec31.jpeg';
+import gptandaVideo1 from '../videos/gptanda1.mp4';
+import gptandaVideo2 from '../videos/gptanda2.mp4';
+import gptandaVideo3 from '../videos/gptanda3.mp4';
+import gptandaVideo4 from '../videos/gptanda4.mp4';
+import gptandaVideo5 from '../videos/gptanda5.mp4';
+import gptandaVideo6 from '../videos/gptanda6.mp4';
+import gptandaVideo7 from '../videos/gptanda7.mp4';
+
+type GalleryTab = 'photos' | 'videos';
+
+type VideoItem =
+    | {
+            type: 'youtube';
+            title: string;
+            desc?: string;
+            url: string;
+      }
+    | {
+            type: 'mp4';
+            title: string;
+            desc?: string;
+            src: string;
+            poster?: string;
+      };
+
+const getYouTubeId = (url: string): string | null => {
+    try {
+        const u = new URL(url);
+        if (u.hostname.includes('youtu.be')) {
+            const id = u.pathname.replace('/', '').trim();
+            return id || null;
+        }
+        if (u.hostname.includes('youtube.com')) {
+            const v = u.searchParams.get('v');
+            if (v) return v;
+            const parts = u.pathname.split('/').filter(Boolean);
+            const embedIdx = parts.indexOf('embed');
+            if (embedIdx >= 0 && parts[embedIdx + 1]) return parts[embedIdx + 1];
+        }
+        return null;
+    } catch {
+        return null;
+    }
+};
+
+const getYouTubeEmbedUrl = (url: string): string | null => {
+    const id = getYouTubeId(url);
+    if (!id) return null;
+    return `https://www.youtube.com/embed/${id}`;
+};
+
+const getYouTubeThumbUrl = (url: string): string | null => {
+    const id = getYouTubeId(url);
+    if (!id) return null;
+    return `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+};
+
 const Gallery: React.FC = () => {
     const images = [
     { src: gp1, title: 'चित्र 1', desc: 'मुख्यमंत्री समृद्ध  पंचायतराज अभियान अंतर्गत ग्राम तांडा येथे जिल्हा परिषद शाळेतील प्रथम व द्वितीय  क्रमांक आलेल्या विद्यार्थ्यांना तसेच गावातील शासकीय सेवेत लागलेल्या मुला मुलींचे ग्रामपंचायत मार्फत शाल, श्रीफळ, व शील्ड देऊन विद्यार्थ्यांचा सत्कार करण्यात आला' },
@@ -53,8 +110,58 @@ const Gallery: React.FC = () => {
     { src: dec31, title: 'चित्र 23', desc: 'मुख्यमंत्री समृद्ध पंचायतराज अभियान  काळात नाविन्यपूर्ण उपक्रम म्हणून ०१/०४/२०२५ ते ३१/१२/२०२५ पर्यंत जन्मलेल्या मुलींना ग्राम पंचायत तांडा येथे दिनांक ३१/१२/२०२५ ला ग्रामपंचायत द्वारे कन्या अनुदान भेट म्हणून १,१०० रुपये अनुदान राशी देण्यात आले.' },
 ];
 
+    const videos: VideoItem[] = [
+        // {
+        //     type: 'youtube',
+        //     title: 'ग्रामपंचायत उपक्रम (YouTube)',
+        //     desc: 'ग्रामपंचायतच्या उपक्रमांचा संक्षिप्त व्हिडिओ',
+        //     url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+        // },
+        {
+            type: 'mp4',
+            title: 'मुख्यमंत्री समृद्ध पंचायतराज अभियान राबविण्यासंदर्भात प्रचार प्रसिद्धी',
+            desc: 'दिनांक १७/०९/२०२५ रोज बुधवारला सकाळी ठिक १०:०० वाजता ग्रामपंचायत कार्यालय तांडा येथे मुख्यमंत्री समृद्ध पंचायतराज अभियान राबविण्यासंदर्भात कार्यक्रम घेण्यात आले.सर्व प्रथम अभियानाचा राज्यस्तरीय सुभारंभ कार्यक्रम प्रक्षेपण उपस्थित सर्वान्ना लाइव कार्यक्रम दाखविण्यात आले .व त्यानंतर विशेष ग्रामसभेला मा.सरपंच श्रीमती सौ. वर्षा दिपक पटले यांच्या अध्यक्षतेखाली सुरुवात करण्यात आली .',
+            src: gptandaVideo2
+        },
+        {
+            type: 'mp4',
+            title: 'भव्य निःशुल्क आरोग्य शिबिर कार्यक्रम',
+            desc: 'मुख्यमंत्री समृद्ध पंचायतराज अभियान कार्यक्रम अंतर्गत ग्राम पंचायत कार्यालय तांडा , व पं.समिती गोंदिया अतंर्गत माय बहुउद्देशीय विकास सेवा संस्था द्वारा भव्य निःशुल्क आरोग्य शिबिर कार्यक्रम दिनांक १०/११/२०२५ रोज सोमवारला आयोजित करण्यात आले.',
+            src: gptandaVideo3
+        },
+        {
+            type: 'mp4',
+            title: 'रंगरंगोटी पेंटिंग',
+            desc: 'मुख्यमंत्री समृद्ध पंचायतराज अभियान अंतर्गत ग्राम तांडा येथील अंगणवाडी क्रमांक-1 ,व अंगणवाडी क्रमांक 2, ला रंगरंगोटी पेंटिंग करण्यात आली.',
+            src: gptandaVideo4
+        },
+        {
+            type: 'mp4',
+            title: 'सॅनिटरी पॅड वितरण',
+            desc: 'मुख्यमंत्री समृद्ध पंचायत राज अभियान दरम्यान जि.प.वरिष्ठ प्राथमिक शाळेतील व खुशाल कापसे महाविद्यालयातील किशोर वयीन व १८ वर्ष पूर्ण मुलींना दर महिन्यात सॅनिटरी पॅड वितरण करून नाविन्यपूर्ण उपक्रम राबविण्यात आले.',
+            src: gptandaVideo5
+        },
+        {
+            type: 'mp4',
+            title: 'मृत व्यक्तीच्या नावाने अभियान काळात वृक्ष लागवड',
+            desc: 'मुख्यमंत्री समृद्ध पंचायत राज अभियान अंतर्गत स्मशानभूमी येथे मृत व्यक्तीच्या नावाने अभियान काळात वृक्ष लागवड करून नाविण्यपूर्ण उपक्रम राबविण्यात आले.',
+            src: gptandaVideo6
+        },
+        {
+            type: 'mp4',
+            title: 'कन्या अनुदान भेट',
+            desc: 'मुख्यमंत्री समृद्ध पंचायतराज अभियान  काळात नाविन्यपूर्ण उपक्रम म्हणून ०१/०४/२०२५ ते ३१/१२/२०२५ पर्यंत जन्मलेल्या मुलींना ग्राम पंचायत तांडा येथे दिनांक ३१/१२/२०२५ ला ग्रामपंचायत द्वारे कन्या अनुदान भेट म्हणून १,१०० रुपये अनुदान राशी देण्यात आले.',
+            src: gptandaVideo7
+        },
+    ];
+
+    const [activeTab, setActiveTab] = useState<GalleryTab>('photos');
+
     const [current, setCurrent] = useState(0);
     const [lightboxOpen, setLightboxOpen] = useState(false);
+
+    const [videoCurrent, setVideoCurrent] = useState(0);
+    const [videoModalOpen, setVideoModalOpen] = useState(false);
 
     // Prevent right-click and drag-save on images
     const preventImgActions = (e: React.SyntheticEvent) => {
@@ -66,17 +173,22 @@ const Gallery: React.FC = () => {
     const next = useCallback(() => setCurrent((c) => (c + 1) % images.length), [images.length]);
 
     const closeLightbox = () => setLightboxOpen(false);
+    const closeVideoModal = () => setVideoModalOpen(false);
 
     useEffect(() => {
         const onKey = (e: KeyboardEvent) => {
-            if (!lightboxOpen) return;
-            if (e.key === 'ArrowLeft') prev();
-            if (e.key === 'ArrowRight') next();
-            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'Escape') {
+                if (lightboxOpen) closeLightbox();
+                if (videoModalOpen) closeVideoModal();
+            }
+            if (activeTab === 'photos' && lightboxOpen) {
+                if (e.key === 'ArrowLeft') prev();
+                if (e.key === 'ArrowRight') next();
+            }
         };
         window.addEventListener('keydown', onKey);
         return () => window.removeEventListener('keydown', onKey);
-    }, [lightboxOpen, next, prev]);
+    }, [activeTab, lightboxOpen, next, prev, videoModalOpen]);
 
     return (
         <div className="gallery-page">
@@ -92,32 +204,100 @@ const Gallery: React.FC = () => {
                         <p>गावातील कार्यक्रम आणि विकास प्रकल्प</p>
                     </div>
 
-                    <div className="thumbnails">
-    {images.map((img, idx) => (
-        <button
-            key={idx}
-            className={`thumb ${idx === current ? 'active' : ''}`}
-            onClick={() => { setCurrent(idx); setLightboxOpen(true); }}
-            onContextMenu={preventImgActions}
-            aria-label={`Open ${img.title}`}
-        >
-            <img
-                src={img.src}
-                alt={img.title}
-                className="no-download"
-                draggable={false}
-                onContextMenu={preventImgActions}
-                onDragStart={preventImgActions}
-            />
-            <div className="thumb-caption">
-                <div className="thumb-title">{img.title}</div>
-                {img.desc && (
-                    <div className="thumb-desc">{img.desc}</div>
-                )}
-            </div>
-        </button>
-    ))}
-</div>
+                    <div className="gallery-tabs" role="tablist" aria-label="Gallery Tabs">
+                        <button
+                            type="button"
+                            className={`tab-btn ${activeTab === 'photos' ? 'active' : ''}`}
+                            role="tab"
+                            aria-selected={activeTab === 'photos'}
+                            onClick={() => setActiveTab('photos')}
+                        >
+                            Photos
+                        </button>
+                        <button
+                            type="button"
+                            className={`tab-btn ${activeTab === 'videos' ? 'active' : ''}`}
+                            role="tab"
+                            aria-selected={activeTab === 'videos'}
+                            onClick={() => setActiveTab('videos')}
+                        >
+                            Videos
+                        </button>
+                    </div>
+
+                    <div className="tab-panels">
+                        <div className={`tab-panel ${activeTab === 'photos' ? 'active' : ''}`} role="tabpanel" aria-hidden={activeTab !== 'photos'}>
+                            <div className="thumbnails">
+                                {images.map((img, idx) => (
+                                    <button
+                                        key={idx}
+                                        className={`thumb ${idx === current ? 'active' : ''}`}
+                                        onClick={() => { setCurrent(idx); setLightboxOpen(true); }}
+                                        onContextMenu={preventImgActions}
+                                        aria-label={`Open ${img.title}`}
+                                    >
+                                        <img
+                                            src={img.src}
+                                            alt={img.title}
+                                            className="no-download"
+                                            draggable={false}
+                                            loading="lazy"
+                                            onContextMenu={preventImgActions}
+                                            onDragStart={preventImgActions}
+                                        />
+                                        <div className="thumb-caption">
+                                            <div className="thumb-title">{img.title}</div>
+                                            {img.desc && (
+                                                <div className="thumb-desc">{img.desc}</div>
+                                            )}
+                                        </div>
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className={`tab-panel ${activeTab === 'videos' ? 'active' : ''}`} role="tabpanel" aria-hidden={activeTab !== 'videos'}>
+                            <div className="media-grid">
+                                {videos.map((v, idx) => {
+                                    const thumb = v.type === 'youtube' ? getYouTubeThumbUrl(v.url) : v.poster;
+                                    return (
+                                        <button
+                                            key={idx}
+                                            type="button"
+                                            className="media-card"
+                                            aria-label={`Open video ${v.title}`}
+                                            onClick={() => {
+                                                setVideoCurrent(idx);
+                                                setVideoModalOpen(true);
+                                            }}
+                                        >
+                                            <div className="media-thumb">
+                                                {v.type === 'youtube' ? (
+                                                    thumb ? (
+                                                        <img src={thumb} alt={v.title} loading="lazy" draggable={false} />
+                                                    ) : (
+                                                        <div className="media-thumb-fallback" aria-hidden />
+                                                    )
+                                                ) : (
+                                                    <video
+                                                        src={v.src}
+                                                        preload="metadata"
+                                                        muted
+                                                        playsInline
+                                                    />
+                                                )}
+                                                <div className="media-play" aria-hidden>
+                                                    ▶
+                                                </div>
+                                            </div>
+                                            <div className="media-title">{v.title}</div>
+                                            {v.desc && <div className="media-desc">{v.desc}</div>}
+                                        </button>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -131,11 +311,49 @@ const Gallery: React.FC = () => {
                             alt={images[current].title}
                             className="no-download"
                             draggable={false}
+                            loading="lazy"
                             onContextMenu={preventImgActions}
                             onDragStart={preventImgActions}
                         />
                         <button className="nav nav-right" onClick={next} aria-label="Next">›</button>
                         <div className="lightbox-caption">{images[current].title}</div>
+                    </div>
+                </div>
+            )}
+
+            {videoModalOpen && (
+                <div className="lightbox video-lightbox" role="dialog" aria-modal="true" onClick={closeVideoModal}>
+                    <div className="lightbox-content video-lightbox-content" onClick={(e) => e.stopPropagation()}>
+                        <button className="close" onClick={closeVideoModal} aria-label="Close">✕</button>
+                        <div className="video-frame">
+                            {(() => {
+                                const v = videos[videoCurrent];
+                                if (v.type === 'youtube') {
+                                    const embedUrl = getYouTubeEmbedUrl(v.url);
+                                    if (!embedUrl) return null;
+                                    return (
+                                        <iframe
+                                            src={embedUrl}
+                                            title={v.title}
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowFullScreen
+                                        />
+                                    );
+                                }
+                                return (
+                                    <video
+                                        src={v.src}
+                                        poster={v.poster}
+                                        controls
+                                        autoPlay
+                                    />
+                                );
+                            })()}
+                        </div>
+                        <div className="lightbox-caption">
+                            <div>{videos[videoCurrent].title}</div>
+                            {videos[videoCurrent].desc && <div className="lightbox-desc">{videos[videoCurrent].desc}</div>}
+                        </div>
                     </div>
                 </div>
             )}

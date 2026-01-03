@@ -293,8 +293,6 @@
   }
 }
 
-/* Celebration (coupon-success) animation - compact and fast (~1.8s) */
-/* Full-page joyful celebration animation */
 .celebration {
   position: fixed;
   top: 0;
@@ -306,7 +304,6 @@
   overflow: hidden;
 }
 
-/* Falling confetti pieces */
 .confetti-container {
   position: absolute;
   inset: 0;
@@ -338,61 +335,6 @@
   }
 }
 
-/* Floating balloons */
-.balloons-container {
-  position: absolute;
-  inset: 0;
-  display: block;
-}
-
-.balloon {
-  position: absolute;
-  left: var(--left, 10%);
-  bottom: -100px;
-  width: 40px;
-  height: 50px;
-  border-radius: 50% 50% 50% 45%;
-  box-shadow: inset -2px -3px 4px rgba(0, 0, 0, 0.15), 0 6px 20px rgba(0, 0, 0, 0.2);
-  animation: floatUp 3s ease-in-out var(--delay, 0s) forwards;
-}
-
-.balloon::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 100%;
-  width: 2px;
-  height: 50px;
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 1px;
-}
-
-@keyframes floatUp {
-  0% {
-    bottom: -100px;
-    opacity: 0;
-    transform: scaleY(0.8);
-  }
-
-  15% {
-    opacity: 1;
-    transform: scaleY(1) rotateZ(var(--rotation, 0deg));
-  }
-
-  85% {
-    opacity: 1;
-    transform: scaleY(1) rotateZ(var(--rotation, 0deg));
-  }
-
-  100% {
-    bottom: 110vh;
-    opacity: 0;
-    transform: scaleY(1) rotateZ(calc(var(--rotation, 0deg) + 45deg));
-  }
-}
-
-/* Sparkles */
 .sparkles-container {
   position: absolute;
   inset: 0;

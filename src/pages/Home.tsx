@@ -118,7 +118,6 @@ const Home: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Celebration animation (brief success UI)
   const [showCelebration, setShowCelebration] = useState(false);
   useEffect(() => {
     setShowCelebration(true);
@@ -130,7 +129,6 @@ const Home: React.FC = () => {
     <div className="home">
       {showCelebration && (
         <div className="celebration" aria-hidden>
-          {/* Full-page confetti */}
           <div className="confetti-container" aria-hidden>
             {Array.from({ length: 40 }).map((_, i) => {
               const left = Math.random() * 100;
@@ -156,27 +154,6 @@ const Home: React.FC = () => {
             })}
           </div>
 
-          {/* Floating balloons */}
-          <div className="balloons-container" aria-hidden>
-            {Array.from({ length: 10 }).map((_, i) => {
-              const colors = ['#FF9933', '#FFFFFF', '#138808', '#FF9933', '#FFFFFF', '#138808', '#FF9933', '#FFFFFF', '#138808', '#FF9933'];
-              const left = (i / 10) * 100;
-              const delay = i * 0.15;
-              return (
-                <div
-                  key={i}
-                  className="balloon"
-                  style={{
-                    ['--left' as any]: `${left}%`,
-                    ['--delay' as any]: `${delay}s`,
-                    backgroundColor: colors[i % colors.length]
-                  }}
-                />
-              );
-            })}
-          </div>
-
-          {/* Floating sparkles */}
           <div className="sparkles-container" aria-hidden>
             {Array.from({ length: 12 }).map((_, i) => {
               const left = Math.random() * 100;
