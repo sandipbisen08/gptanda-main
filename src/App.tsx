@@ -64,6 +64,7 @@ const App: React.FC = () => {
       <Footer />
       <Analytics />
     </div>
+
   );
 };
 
