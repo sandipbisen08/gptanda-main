@@ -20,7 +20,7 @@ import Feedback from './pages/Feedback';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsAndConditions from './pages/TermsAndConditions';
 import RTI from './pages/RTI';
-import './App.scss';
+import './app.scss';
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
