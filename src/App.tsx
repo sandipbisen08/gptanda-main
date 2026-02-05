@@ -22,6 +22,7 @@ import TermsAndConditions from './pages/TermsAndConditions';
 import RTI from './pages/RTI';
 import './App.scss';
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 // Scroll to top on route change
 const ScrollToTop: React.FC = () => {
@@ -63,6 +64,7 @@ const App: React.FC = () => {
       </main>
       <Footer />
       <Analytics />
+      <SpeedInsights />
     </div>
 
   );
