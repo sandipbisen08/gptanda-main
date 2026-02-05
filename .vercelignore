@@ -1,0 +1,45 @@
+
+# Production dependencies
+/node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# misc
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# Source files (only needed for build)
+/src
+/public/index.html
+tsconfig.json
+react-scripts
+
+# Documentation
+*.md
+CHANGES_SUMMARY.txt
+COMPLETE_DOCUMENTATION.md
+DEPLOYMENT_GUIDE.md
+DEPLOYMENT_READY.md
+FRONTEND_ONLY_SUMMARY.md
+GALLERY_QUICK_SETUP.md
+GALLERY_SECTION.md
+IMPLEMENTATION_SUMMARY.md
+INDIAN_GOVERNMENT_THEME.md
+PROJECT_STATUS.md
+PROJECT_VERIFICATION.md
+QUICK_REFERENCE.md
+SEO_AND_OFFICIALS_IMPROVEMENTS.md
+UI_DESIGN_GUIDE.md
+UI_ENHANCEMENTS.md
