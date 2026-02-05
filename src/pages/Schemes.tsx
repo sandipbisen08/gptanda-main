@@ -1,54 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Schemes.scss';
 
 const Schemes: React.FC = () => {
-  const rows = [
-    {
-      id: 1,
-      name: 'महात्मा गांधी राष्ट्रीय ग्रामीण रोजगार हमी योजना',
-      year: '2023-2024',
-      received: 97813,
-      spent: 97254.8,
-    },
-    {
-      id: 2,
-      name: '15 वा वित्त आयोग योजना',
-      year: '2023-2024',
-      received: 2262340,
-      spent: 3550351.4,
-    },
-    {
-      id: 3,
-      name: 'महात्मा गांधी राष्ट्रीय ग्रामीण रोजगार हमी योजना',
-      year: '2023-2024',
-      received: 97813,
-      spent: 97254.8,
-    },
-    {
-      id: 4,
-      name: '15 वा वित्त आयोग योजना',
-      year: '2023-2024',
-      received: 2262340,
-      spent: 3550351.4,
-    },
-    {
-      id: 5,
-      name: 'महात्मा गांधी राष्ट्रीय ग्रामीण रोजगार हमी योजना',
-      year: '2023-2024',
-      received: 97813,
-      spent: 97254.8,
-    },
-    {
-      id: 6,
-      name: '15 वा वित्त आयोग योजना',
-      year: '2023-2024',
-      received: 2262340,
-      spent: 3550351.4,
-    },
-  ];
-
-  const format = (n: number) => n.toLocaleString('en-IN', { maximumFractionDigits: 2 });
 
   return (
     <div className="schemes">
