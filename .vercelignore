@@ -21,8 +21,6 @@ yarn-error.log*
 *~
 
 # Source files (only needed for build)
-/src
-/public/index.html
 tsconfig.json
 react-scripts
 
