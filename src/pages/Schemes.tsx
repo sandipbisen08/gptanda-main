@@ -97,6 +97,7 @@ const Schemes: React.FC = () => {
       </section> */}
       <h1 style={{ marginTop: '100px' }}>This page is under development, please visit later...</h1>
     </div>
+
   );
 };
 
