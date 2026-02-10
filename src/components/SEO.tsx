@@ -111,7 +111,7 @@ const SEO: React.FC<SEOProps> = ({
       script.textContent = JSON.stringify(structuredData);
       document.head.appendChild(script);
     }
-  }, [title, description, keywords, ogTitle, ogDescription, ogImage, ogUrl, canonicalUrl, structuredData]);
+  }, [title, description, finalKeywords, ogTitle, ogDescription, ogImage, ogUrl, canonicalUrl, structuredData]);
 
   return null;
 };
