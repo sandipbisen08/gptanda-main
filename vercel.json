@@ -1,5 +1,4 @@
 {
-  "_comment": "Force cache invalidation",
   "buildCommand": "CI=false npm run build",
   "outputDirectory": "build",
   "headers": [
