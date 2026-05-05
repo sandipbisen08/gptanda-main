@@ -5,9 +5,15 @@ import SEO from '../components/SEO';
 import Marquee from '../components/Marquee';
 import './Home.scss';
 import { members as sharedMembers, Member } from '../data/members';
+import gp1 from '../images/gp1.jpg';
+import gp2 from '../images/gp2.jpg';
+import gp3 from '../images/gp3.jpg';
 import gp4 from '../images/gp4.jpg';
 import gp5 from '../images/gp5.jpg';
 import gp6 from '../images/gp6.jpg';
+import gpb2 from '../images/gpb2.jpg';
+import gpb3 from '../images/gpb3.jpg';
+import gpb5 from '../images/gpb5.jpg';
 import herobg from '../images/herobg.jpg';
 import gptanda from '../images/gptanda.jpg';
 import new1 from '../images/new1.jpg';
@@ -15,7 +21,6 @@ import new2 from '../images/new2.jpg';
 import new3 from '../images/new3.jpg';
 import news1 from '../images/news1.jpg';
 import news2 from '../images/news2.jpg';
-import gpb5 from '../images/gpb5.jpg';
 import gptandaVideo from '../videos/gptanda2.mp4';
 import gptandaVideo2 from '../videos/gptanda1.mp4';
 import gptandaVideo3 from '../videos/gptanda3.mp4';
@@ -401,16 +406,21 @@ const Home: React.FC = () => {
             <p>गावातील कार्यक्रम आणि विकास प्रकल्प</p>
           </div>
           <div className="gallery-grid">
-            {[
+            {[{ src: gp1, title: 'ग्रामपंचायत कार्यालय' },
+              { src: gp2, title: 'स्वच्छता अभियान' },
+              { src: gp3, title: 'सौर ऊर्जा कार्यक्रम' },
+              { src: gp4, title: 'मुख्यमंत्री अभियान' },
+              { src: gp5, title: 'प्रशासनिक सभा' },
+              { src: gp6, title: 'ग्राम विकास कार्यक्रम' },
+              { src: gpb2, title: 'आरोग्य शिबिर' },
+              { src: gpb3, title: 'स्त्री कल्याण कार्यक्रम' },
+              { src: gpb5, title: 'नाल्याच्या बांधकामाचे काम' },
               { src: news1, title: 'निःशुल्क आरोग्य शिबिर' },
-              { src: news2, title: 'निःशुल्क आरोग्य शिबिर' },
+              { src: news2, title: 'समाजिक उपक्रम' },
               { src: new3, title: 'महिला बचत गट' },
               { src: new2, title: 'गाव विकास कार्यक्रम' },
               { src: new1, title: 'शिक्षा कार्यक्रम' },
-              { src: gp4, title: 'सामाजिक कार्यक्रम' },
-              { src: gp5, title: 'कृषि विकास' },
-              { src: gp6, title: 'कृत्रिम विसर्जन तलाव' }
-
+              { src: gptanda, title: 'ग्राम कामकाज' }
             ].map((img, idx) => (
               <div className="gallery-item" key={idx}>
                 <img src={img.src} alt={img.title} />
