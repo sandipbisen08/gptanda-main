@@ -1,5 +1,6 @@
 import React, { FormEvent, useEffect, useMemo, useRef, useState } from 'react';
-import { FaComments, FaPaperPlane, FaTimes, FaRobot, FaUser, FaChevronRight } from 'react-icons/fa';
+import { FaComments, FaPaperPlane, FaTimes, FaUser, FaChevronRight } from 'react-icons/fa';
+import MaitriAvatar from './SakhiAvatar';
 import './ChatBot.scss';
 
 type ChatMessage = {
@@ -112,7 +113,7 @@ const getLocalReply = (question: string) => {
   const text = question.toLowerCase();
 
   if (hasAny(text, ['your name', 'who are you', 'bot name', 'assistant name', 'तुझे नाव', 'तुमचे नाव', 'तुझं नाव', 'तू कोण', 'तुम्ही कोण'])) {
-    return 'माझे नाव सखी आहे. मी तांडा ग्रामपंचायत संकेतस्थळावरील सेवा, योजना, अहवाल, संपर्क, नेतृत्व आणि तक्रार / सूचना यांची माहिती देण्यासाठी तयार केलेली AI नागरिक मदत सहाय्यक आहे.';
+    return 'माझे नाव मैत्री आहे. मी तांडा ग्रामपंचायत संकेतस्थळावरील सेवा, योजना, अहवाल, संपर्क, नेतृत्व आणि तक्रार / सूचना यांची माहिती देण्यासाठी तयार केलेली AI नागरिक मदत सहाय्यक आहे.';
   }
 
   if (text.includes('upsarpanch') || text.includes('up sarpanch') || text.includes('उपसरपंच')) {
@@ -194,7 +195,7 @@ const ChatBot: React.FC = () => {
     {
       id: 1,
       role: 'assistant',
-      text: 'नमस्कार. मी सखी आहे. तांडा ग्रामपंचायत सेवा, योजना, अहवाल, संपर्क आणि तक्रार / सूचना यांची माहिती शोधण्यात मी मदत करते.'
+      text: 'नमस्कार. मी मैत्री आहे. तांडा ग्रामपंचायत सेवा, योजना, अहवाल, संपर्क आणि तक्रार / सूचना यांची माहिती शोधण्यात मी मदत करते.'
     }
   ]);
   const nextId = useRef(2);
@@ -261,12 +262,12 @@ const ChatBot: React.FC = () => {
   return (
     <div className={`chatbot ${isOpen ? 'chatbot-open' : ''}`}>
       {isOpen && (
-        <section className="chatbot-panel" aria-label="सखी AI सहाय्यक">
+        <section className="chatbot-panel" aria-label="मैत्री AI सहाय्यक">
           <header className="chatbot-header">
             <div className="chatbot-title">
-              <span className="chatbot-avatar" aria-hidden="true"><FaRobot /></span>
+              <span className="chatbot-avatar" aria-hidden="true"><MaitriAvatar /></span>
               <div>
-                <h2>सखी</h2>
+                <h2>मैत्री</h2>
                 <p>तांडा ग्रामपंचायत AI सहाय्यक</p>
               </div>
             </div>
@@ -279,15 +280,19 @@ const ChatBot: React.FC = () => {
             {messages.map((message) => (
               <div key={message.id} className={`chatbot-message ${message.role}`}>
                 <span className="message-icon" aria-hidden="true">
-                  {message.role === 'assistant' ? <FaRobot /> : <FaUser />}
+                  {message.role === 'assistant' ? <MaitriAvatar /> : <FaUser />}
                 </span>
                 <p>{message.text}</p>
               </div>
             ))}
             {isLoading && (
               <div className="chatbot-message assistant">
-                <span className="message-icon" aria-hidden="true"><FaRobot /></span>
-                <p>उत्तर तयार करत आहे...</p>
+                <span className="message-icon" aria-hidden="true"><MaitriAvatar /></span>
+                <p className="typing-text" aria-label="उत्तर तयार करत आहे">
+                  <span />
+                  <span />
+                  <span />
+                </p>
               </div>
             )}
             <div ref={messagesEndRef} />
@@ -326,9 +331,10 @@ const ChatBot: React.FC = () => {
         </section>
       )}
 
-      <button type="button" className="chatbot-toggle" onClick={() => setIsOpen((current) => !current)} aria-label="सखी AI सहाय्यक उघडा">
+      <button type="button" className="chatbot-toggle" onClick={() => setIsOpen((current) => !current)} aria-label="मैत्री AI सहाय्यक उघडा">
+        {!isOpen && <span className="chatbot-hi" aria-hidden="true">नमस्कार</span>}
         <FaComments />
-        <span>सखी AI</span>
+        <span>मैत्री AI</span>
       </button>
     </div>
   );
