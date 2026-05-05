@@ -20,6 +20,7 @@ import Feedback from './pages/Feedback';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsAndConditions from './pages/TermsAndConditions';
 import RTI from './pages/RTI';
+import ChatBot from './components/ChatBot';
 import './App.scss';
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
@@ -63,6 +64,7 @@ const App: React.FC = () => {
         </Routes>
       </main>
       <Footer />
+      <ChatBot />
       <Analytics />
       <SpeedInsights />
     </div>
