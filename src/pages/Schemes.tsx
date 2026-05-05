@@ -1,11 +1,23 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Schemes.scss';
 
 const Schemes: React.FC = () => {
+  const format = (num: number) => {
+    return new Intl.NumberFormat('en-IN').format(num);
+  };
+
+  const rows = [
+    { id: 1, name: 'महात्मा गांधी राष्ट्रीय ग्रामीण रोजगार हमी योजना', year: '2023-24', received: 250000, spent: 220000 },
+    { id: 2, name: 'स्वच्छ भारत मिशन योजना', year: '2023-24', received: 150000, spent: 140000 },
+    { id: 3, name: '15 वा वित्त आयोग योजना', year: '2023-24', received: 300000, spent: 280000 },
+    { id: 4, name: 'जल जीवन मिशन योजना', year: '2023-24', received: 400000, spent: 380000 },
+    { id: 5, name: 'जन सुरक्षा योजना', year: '2023-24', received: 100000, spent: 95000 },
+  ];
 
   return (
     <div className="schemes">
-      {/* <section className="page-hero">
+      <section className="page-hero">
         <div className="container">
           <h1>आमच्या योजना</h1>
           <p className="subtitle">तांडा ग्रामपंचायत द्वारा प्रदान केलेल्या योजना</p>
@@ -94,8 +106,8 @@ const Schemes: React.FC = () => {
             </ul>
           </div>
         </div>
-      </section> */}
-      <h1 style={{ marginTop: '100px' }}>This page is under development, please visit later...</h1>
+      </section>
+      {/* <h1 style={{ marginTop: '100px' }}>This page is under development, please visit later...</h1> */}
     </div>
 
   );
