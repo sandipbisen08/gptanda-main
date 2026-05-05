@@ -57,12 +57,14 @@
       height: auto;
       overflow: hidden;
       background: #f6f6f6;
+      cursor: pointer;
     }
 
     .thumb img {
       width: 100%;
       height: 100%;
       // object-fit: cover;
+      display: block;
     }
 
     .content {
@@ -85,6 +87,8 @@
       border-radius: 6px;
       font-weight: 600;
       text-decoration: none;
+      cursor: pointer;
+      border: none;
     }
 
     .btn-primary {
@@ -100,6 +104,83 @@
 
     .btn:hover {
       filter: brightness(0.98);
+    }
+  }
+
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    z-index: 1000;
+  }
+
+  .viewer-content {
+    max-width: 90%;
+    max-height: 90%;
+    text-align: center;
+    color: white;
+  }
+
+  .viewer-content img {
+    width: auto;
+    max-width: 100%;
+    max-height: calc(90vh - 90px);
+    border-radius: 12px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  }
+
+  .viewer-content h3 {
+    margin-top: 16px;
+    font-size: 1.1rem;
+    color: white;
+  }
+
+  .viewer-close,
+  .viewer-arrow {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .viewer-close:hover,
+  .viewer-arrow:hover {
+    background: rgba(255, 255, 255, 0.22);
+  }
+
+  .viewer-close {
+    top: 20px;
+    right: 20px;
+  }
+
+  .viewer-arrow.prev {
+    left: 20px;
+  }
+
+  .viewer-arrow.next {
+    right: 20px;
+  }
+
+  @media (max-width: 640px) {
+
+    .viewer-close,
+    .viewer-arrow {
+      width: 38px;
+      height: 38px;
+      font-size: 1.4rem;
     }
   }
 }

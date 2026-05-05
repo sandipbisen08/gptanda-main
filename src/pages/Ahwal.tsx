@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Ahwal.scss';
 import data1 from '../images/data/data1.png';
@@ -56,6 +56,8 @@ import data52 from '../images/data/data52.png';
 import data53 from '../images/data/data53.png';
 
 const Ahwal: React.FC = () => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
   const reports = [
     { id: 1, title: 'मुख्यमंत्री समृद्ध पंचायत राज अभियान', image: data1 },
     { id: 2, title: 'लोकभिमुख प्रशासन ग्रामपंचायत', image: data2 },
@@ -127,9 +129,9 @@ const Ahwal: React.FC = () => {
 
       <section className="container">
         <div className="reports-grid">
-          {reports.map(r => (
+          {reports.map((r, index) => (
             <article key={r.id} className="report-card">
-              <div className="thumb">
+              <div className="thumb" onClick={() => setActiveIndex(index)}>
                 <img src={r.image} alt={r.title} />
               </div>
               <div className="content">
@@ -138,15 +140,34 @@ const Ahwal: React.FC = () => {
                   <a href={r.image} className="btn btn-primary" download>
                     Download
                   </a>
-                  <a href={r.image} className="btn btn-outline" target="_blank" rel="noreferrer">
+                  <button type="button" className="btn btn-outline" onClick={() => setActiveIndex(index)}>
                     View
-                  </a>
+                  </button>
                 </div>
               </div>
             </article>
           ))}
         </div>
       </section>
+
+      {activeIndex !== null && (
+        <div className="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+          <button type="button" className="viewer-close" onClick={() => setActiveIndex(null)} aria-label="Close preview">
+            ×
+          </button>
+          <button type="button" className="viewer-arrow prev" onClick={() => setActiveIndex((prev) => (prev !== null ? (prev + reports.length - 1) % reports.length : null))} aria-label="Previous report">
+            ‹
+          </button>
+          <div className="viewer-content">
+            <img src={reports[activeIndex].image} alt={reports[activeIndex].title} />
+            <h3>{reports[activeIndex].title}</h3>
+          </div>
+          <button type="button" className="viewer-arrow next" onClick={() => setActiveIndex((prev) => (prev !== null ? (prev + 1) % reports.length : null))} aria-label="Next report">
+            ›
+          </button>
+        </div>
+      )}
+
       {/* <h1 style={{ marginTop: '100px' }}>This page is under development, please visit later...</h1> */}
     </div>
   );
