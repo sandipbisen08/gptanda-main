@@ -1,8 +1,10 @@
 const SITE_CONTEXT = `
 You are the AI help desk for Gram Panchayat Tanda, Gondia, Maharashtra.
-Your public name is "सखी".
+Your public name is "मैत्री".
 Always answer in simple, respectful Marathi unless the visitor clearly asks for another language.
 Help visitors find information on the website. Keep answers short, practical, and friendly.
+When a question is outside the website scope, politely say that you can only answer local Gram Panchayat and website-related information.
+Always suggest the relevant page if possible, and do not hallucinate information that is not on the site.
 Relevant pages:
 - Home: village introduction, latest updates, gallery highlights, executive committee.
 - Services: Gram Panchayat services and public service information.
@@ -24,7 +26,7 @@ Important known details:
 - Gram Panchayat members: श्री रामेश्वर नारायण भगत, सौ. ज्योतीताई गौरीशंकर खांडेकर, कु. त्रिवेणीताई सत्यवान कटरे, श्री रमेश पुरणलाल उके, सौ. लताताई अशोकसिंह पवार, श्री जितेंद्र नारायण बिसेन, सौ. अनिताताई सुभाष भलावी, सौ. कलाबाई राजेश शेंडे.
 - Schemes mentioned include MGNREGA, Swachh Bharat Mission, 15th Finance Commission, Jal Jeevan Mission, Jan Suraksha Yojana, self fund, general fund, and rural water supply fund.
 - Services mentioned include online Gram Panchayat certificates, education information, dispute resolution committee, health camp updates, and drinking water supply work.
-- Village overview: population 2782, houses 846, literacy rate 85%, agriculture occupation 70%, school available from class 1 to 7.
+- Village overview: population 2782, houses 848, literacy rate 85%, agriculture occupation 70%, school available from class 1 to 7.
 - Development projects include well repair and water supply improvement, village cleanliness initiative, road repair, drainage, public lighting, school and anganwadi improvements.
 - RTI: citizens can request Gram Panchayat records, meeting resolutions, development work estimates and expenses, beneficiary lists, tax and fee rules. RTI response period is generally 30 days.
 If a user asks for official records, tell them to contact the Gram Panchayat office or use the relevant website page.
@@ -58,7 +60,7 @@ const PANCHAYAT_INFO = {
   },
   village: {
     population: '2782',
-    houses: '846',
+    houses: '848,
     literacy: '85%',
     agriculture: '70%',
     school: 'ग्रामपंचायत अंतर्गत 1 ते 7 वी पर्यंत शाळा उपलब्ध आहे.',
@@ -120,7 +122,7 @@ const fallbackReply = (message) => {
   const text = String(message || '').toLowerCase();
 
   if (hasAny(text, ['your name', 'who are you', 'bot name', 'assistant name', 'तुझे नाव', 'तुमचे नाव', 'तुझं नाव', 'तू कोण', 'तुम्ही कोण'])) {
-    return 'माझे नाव सखी आहे. मी तांडा ग्रामपंचायत संकेतस्थळावरील सेवा, योजना, अहवाल, संपर्क, नेतृत्व आणि तक्रार / सूचना यांची माहिती देण्यासाठी तयार केलेली AI नागरिक मदत सहाय्यक आहे.';
+    return 'माझे नाव मैत्री आहे. मी तांडा ग्रामपंचायत संकेतस्थळावरील सेवा, योजना, अहवाल, संपर्क, नेतृत्व आणि तक्रार / सूचना यांची माहिती देण्यासाठी तयार केलेली AI नागरिक मदत सहाय्यक आहे.';
   }
 
   if (text.includes('upsarpanch') || text.includes('up sarpanch') || text.includes('उपसरपंच')) {
@@ -191,7 +193,7 @@ const fallbackReply = (message) => {
     return 'नेतृत्व मेनूमध्ये सरपंच, उपसरपंच, ग्रामपंचायत अधिकारी, अध्यक्ष आणि सदस्यांची माहिती पाहता येईल.';
   }
 
-  return 'नमस्कार. मी सखी आहे. या संकेतस्थळावर सेवा, योजना, अहवाल, संपर्क, तक्रार / सूचना, नेतृत्व आणि गावाची माहिती शोधण्यात मी मदत करू शकते.';
+  return 'नमस्कार. मी मैत्री आहे. या संकेतस्थळावर सेवा, योजना, अहवाल, संपर्क, तक्रार / सूचना, नेतृत्व आणि गावाची माहिती शोधण्यात मी मदत करू शकते.';
 };
 
 module.exports = async function handler(req, res) {
@@ -244,9 +246,9 @@ module.exports = async function handler(req, res) {
 
   const safeHistory = Array.isArray(history)
     ? history.slice(-8).map((item) => ({
-        role: item && item.role === 'user' ? 'user' : 'assistant',
-        content: String(item && item.text ? item.text : '').slice(0, 700)
-      })).filter((item) => item.content)
+      role: item && item.role === 'user' ? 'user' : 'assistant',
+      content: String(item && item.text ? item.text : '').slice(0, 700)
+    })).filter((item) => item.content)
     : [];
 
   try {

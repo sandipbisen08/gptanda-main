@@ -176,7 +176,7 @@ const About: React.FC = () => {
             <div className="stats-grid">
               {/* Counters will animate when this section scrolls into view */}
               <AnimatedStat label="एकूण लोकसंख्या" value={2782} format="number" />
-              <AnimatedStat label="घरे" value={846} format="number" />
+              <AnimatedStat label="घरे" value={848} format="number" />
               <AnimatedStat label="साक्षरता दर" value={85} format="percent" />
               <AnimatedStat label="कृषी व्यवसाय" value={70} format="percent" />
             </div>
