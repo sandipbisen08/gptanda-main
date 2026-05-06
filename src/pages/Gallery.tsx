@@ -77,8 +77,36 @@ import p37 from '../images/p37.png';
 import p38 from '../images/p38.png';
 import p39 from '../images/p39.png';
 import p40 from '../images/p40.png';
-
-
+import p41 from '../images/p41.png';
+import p42 from '../images/p42.png';
+import p43 from '../images/p43.png';
+import p44 from '../images/p44.png';
+import p45 from '../images/p45.png';
+import p46 from '../images/p46.png';
+import p47 from '../images/p47.png';
+import p48 from '../images/p48.png';
+import p49 from '../images/p49.png';
+import p50 from '../images/p50.png';
+import p51 from '../images/p51.png';
+import p52 from '../images/p52.png';
+import p53 from '../images/p53.png';
+import p54 from '../images/p54.png';
+import p55 from '../images/p55.png';
+import p56 from '../images/p56.png';
+import p57 from '../images/p57.png';
+import p58 from '../images/p58.png';
+import p59 from '../images/p59.png';
+import p60 from '../images/p60.png';
+import p61 from '../images/p61.png';
+import p62 from '../images/p62.png';
+import p63 from '../images/p63.png';
+import p64 from '../images/p64.png';
+import p65 from '../images/p65.png';
+import p66 from '../images/p66.png';
+import p67 from '../images/p67.png';
+import p68 from '../images/p68.png';
+import p69 from '../images/p69.png';
+import p70 from '../images/p70.png';
 
 type GalleryTab = 'photos' | 'videos';
 
@@ -196,7 +224,37 @@ const Gallery: React.FC = () => {
         { src: p37, title: 'चित्र 62' },
         { src: p38, title: 'चित्र 63' },
         { src: p39, title: 'चित्र 64' },
-        { src: p40, title: 'चित्र 65' }
+        { src: p40, title: 'चित्र 65' },
+        { src: p41, title: 'चित्र 66' },
+        { src: p42, title: 'चित्र 67' },
+        { src: p43, title: 'चित्र 68' },
+        { src: p44, title: 'चित्र 69' },
+        { src: p45, title: 'चित्र 70' },
+        { src: p46, title: 'चित्र 71' },
+        { src: p47, title: 'चित्र 72' },
+        { src: p48, title: 'चित्र 73' },
+        { src: p49, title: 'चित्र 74' },
+        { src: p50, title: 'चित्र 75' },
+        { src: p51, title: 'चित्र 76' },
+        { src: p52, title: 'चित्र 77' },
+        { src: p53, title: 'चित्र 78' },
+        { src: p54, title: 'चित्र 79' },
+        { src: p55, title: 'चित्र 80' },
+        { src: p56, title: 'चित्र 81' },
+        { src: p57, title: 'चित्र 82' },
+        { src: p58, title: 'चित्र 83' },
+        { src: p59, title: 'चित्र 84' },
+        { src: p60, title: 'चित्र 85' },
+        { src: p61, title: 'चित्र 86' },
+        { src: p62, title: 'चित्र 87' },
+        { src: p63, title: 'चित्र 88' },
+        { src: p64, title: 'चित्र 89' },
+        { src: p65, title: 'चित्र 90' },
+        { src: p66, title: 'चित्र 91' },
+        { src: p67, title: 'चित्र 92' },
+        { src: p68, title: 'चित्र 93' },
+        { src: p69, title: 'चित्र 94' },
+        { src: p70, title: 'चित्र 95' }
 
     ];
 
